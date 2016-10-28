@@ -47,7 +47,11 @@ function true_remove_personal_options(){
 	jQuery(document).ready(function($) {
 	$(\'form#your-profile > h2:first\').hide();
 	$(\'form#your-profile > table:first\').hide();
+	$(\'form#your-profile > h2:eq(3)\').hide();
+	$(\'form#your-profile > table:eq(3)\').hide();
 	$(\'form#your-profile tr.user-url-wrap\').hide();
+	$(\'form#your-profile > table:last\').prependTo(\'form#your-profile > h2:last\');
+	
 	$(\'form#your-profile\').show(); });
 	</script>' . "\n";
 }
@@ -77,5 +81,38 @@ function my_user_contactmethods($user_contactmethods)
 	$user_contactmethods['whatsapp'] = '<b>WhatsApp</b>';
 
     return $user_contactmethods;
+}
+
+//Добавляем раздел в профиль пользователя
+
+### дополнительные данные на странице профиля
+add_action('show_user_profile', 'my_profile_new_fields_add');
+add_action('edit_user_profile', 'my_profile_new_fields_add');
+
+add_action('personal_options_update', 'my_profile_new_fields_update');
+add_action('edit_user_profile_update', 'my_profile_new_fields_update');
+
+function my_profile_new_fields_add(){ 
+	global $user_ID;
+	
+	$addinfo = get_user_meta( $user_ID, "user_addinfo", 1 );
+	
+	?>
+	<table class="form-table">
+		<tr>
+			<th><label for="user_fb_txt">Дополнительная информация</label></th>
+			<td>
+				<textarea name="user_addinfo" rows=5 cols=30><?php echo $addinfo ?></textarea><br>
+			</td>
+		</tr>
+	</table>
+	<?php            
+}
+
+// обновление
+function my_profile_new_fields_update(){
+	global $user_ID;
+	
+	update_user_meta( $user_ID, "user_addinfo", $_POST['user_addinfo'] );
 }
 ?>
