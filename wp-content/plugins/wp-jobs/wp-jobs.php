@@ -115,4 +115,209 @@ function my_profile_new_fields_update(){
 	
 	update_user_meta( $user_ID, "user_addinfo", $_POST['user_addinfo'] );
 }
+
+//регистрация типа поля ЗТУ
+add_action( 'init', 'ovg_create_ztu_field' );
+
+function ovg_create_ztu_field() {
+	register_post_type( 'ovg_ztu',	
+        array(
+            'labels' => array(
+                'name' => 'Заказ/товар',
+                'singular_name' => 'Заказ/товар',
+                'add_new' => 'Добавить',
+                'add_new_item' => 'Добавить',
+                'edit' => 'Редактировать',
+                'edit_item' => 'Редактировать',
+                'new_item' => 'Создать',
+                'view' => 'Просмотреть',
+                'view_item' => 'Просмотреть',
+                'search_items' => 'Найти',
+                'not_found' => 'Не найлено',
+                'not_found_in_trash' => 'Не найлено в корзине'
+            ),
+            'public' => true,
+            'rewrite' => array( 'slug' => 'usluga' ),
+            'menu_position' => 15,
+            'supports' => array( 'title', 'thumbnail'),
+            'taxonomies' => array( '' ),
+            //'menu_icon' => plugins_url( 'images/image.png', __FILE__ ),
+            'has_archive' => false
+        )
+    );		
+}
+
+//Регистрация таксономия для ЗТУ
+
+add_action( 'init', 'ovg_create_ztu_taxonomy' );
+
+function ovg_create_ztu_taxonomy() {
+	register_taxonomy(  //Типы заказ/товар/услуга
+		'ovg_ztu_type',
+		'ovg_ztu',
+		array(
+			'label' => 'Типы',
+			'hierarchical' => FALSE,
+			'meta_box_cb' => FALSE
+		)
+	);
+	
+	register_taxonomy(	//Категории
+		'ovg_ztu_categories',
+		'ovg_ztu',
+		array(
+			'label' => 'Категории заказа/товара/услуги',
+			'hierarchical' => true,
+			'meta_box_cb' => FALSE
+		)
+	);
+}
+
+//Редактирование ЗТУ
+
+add_action( 'save_post', 'ovg_save_ztu_metabox' );
+add_action( 'add_meta_boxes','ovg_add_metabox_for_ztu' );
+
+function  ovg_add_metabox_for_ztu(){
+	add_meta_box(
+		'ztu_attribute_metabox', // ID, should be a string
+		'Описание заказа/товара/услуги', // Meta Box Title
+		'ovg_ztu_meta_box_content', // Your call back function, this is where your form field will go
+		'ovg_ztu', // The post type you want this to edit screen section (�post�, �page�, �dashboard�, �link�, �attachment� or �custom_post_type� where custom_post_type is the custom post type slug)
+		'normal', // The placement of your meta box, can be �normal�, �advanced�or side
+		'high' // The priority in which this will be displayed
+		);
+}
+
+function ovg_ztu_meta_box_content($post) {
+	$ztu_type = get_post_meta($post->ID, 'ztu_type', true);
+	$ztu_category = get_post_meta($post->ID, 'ztu_category', true);
+	$ztu_subcategory = get_post_meta($post->ID, 'ztu_subcategory', true);
+	$ztu_price = get_post_meta($post->ID, 'ztu_price', true);
+	$ztu_place = get_post_meta($post->ID, 'ztu_place', true);
+	$ztu_descr = get_post_meta($post->ID, 'ztu_descr', true);
+	$ztu_photo = get_post_meta($post->ID, 'ztu_photo', true);
+	$ztu_video = get_post_meta($post->ID, 'ztu_video', true);
+	$ztu_begin = get_post_meta($post->ID, 'ztu_begin', true);
+	$ztu_end = get_post_meta($post->ID, 'ztu_end', true);
+	
+	
+	//echo print_r(json_decode($car_transfer[0]));
+?>
+	<table style="border-spacing: 0px 5px; border-collapse: initial;">
+		<tbody>
+			<tr>
+				<th style="width:300px;">Тип:</th>
+				<td>
+					<select name="ztumetabox_type" id="ztumetabox_type" style="width:300px;">
+					
+					<?php 
+						$types = get_terms('ovg_ztu_type', array('orderby' => 'name', 'fields' => 'names', 'hide_empty' => 0));
+						//print_r($types);
+						foreach($types as $type):
+					?>
+					
+						<option value="<?php echo $type?>" <?php if($ztu_type == $type) echo 'selected'; ?>><?php echo $type?></option>
+						
+						
+					<?php endforeach;?>
+				</td>
+			</tr>
+
+			<tr>
+				<th style="width:300px;">Категория:</th>
+				<td>
+					<select name="ztumetabox_category" id="ztumetabox_category" style="width:300px;">
+					
+					<?php 
+						$categories = get_terms('ovg_ztu_categories', array('orderby' => 'name', 'fields' => 'id=>name', 'hide_empty' => 0, 'parent' => 0));
+						//print_r($cities);
+						foreach($categories as $category_id=>$category_name):
+					?>
+					
+						<option value="<?php echo $category_id?>" <?php if($ztu_category == $category_id) echo 'selected'; ?>><?php echo $category_name?></option>
+						
+						
+					<?php endforeach;?>
+				</td>
+			</tr>
+			
+			<tr>
+				<th style="width:300px;">Подкатегория:</th>
+				<td>
+					<select name="ztumetabox_subcategory" id="ztumetabox_subcategory" style="width:300px;">
+					
+					<?php
+					
+						if ($ztu_category) {
+						$subcategories = get_terms('ovg_ztu_categories', array('orderby' => 'name', 'fields' => 'id=>name', 'hide_empty' => 0, 'parent' => $ztu_category));
+						//print_r($cities);
+						foreach($subcategories as $subcategory_id=>$subcategory_name):
+					?>
+					
+						<option value="<?php echo $subcategory_id?>" <?php if($ztu_subcategory == $subcategory_id) echo 'selected'; ?>><?php echo $subcategory_name?></option>
+						
+						
+					<?php endforeach;
+					}
+					?>
+				</td>
+			</tr>
+			
+			<tr>
+				<th style="width:300px;">Подробное описание:</th>
+				<td>
+					<textarea style="width:300px; height: 100px;" name="ztumetabox_descr" id="ztumetabox_descr"><?php if(isset($ztu_descr)) echo $car_descr;?></textarea>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+<script>
+	jQuery("#ztumetabox_category").change(function(){
+		parent_id = jQuery("#ztumetabox_category").val();
+		//alert(parent_id);
+		jQuery.ajax({
+		type: "POST",
+        url: '<?php echo admin_url( 'admin-ajax.php' );?>',
+		data: {
+            action:'ovg_load_subcategories',
+            parent_id: parent_id,
+            },
+        dataType:'json',
+		success: function (data) {
+			//alert(data);
+			jQuery("#ztumetabox_subcategory").empty();
+			jQuery.each(data, function(key, value) {
+				jQuery("#ztumetabox_subcategory").append(jQuery("<option value='" + key + "'>" + value + "</option>"));
+			});
+		},
+		error : function(s , i , error){
+			console.log(error);
+		}
+	});
+	});
+</script>
+
+<?
+}
+
+function ovg_save_ztu_metabox($post_id) {
+	
+}
+
+//-------------AJAX functions--------------------
+add_action( 'wp_ajax_nopriv_ovg_load_subcategories','ovg_load_subcategories' );
+add_action( 'wp_ajax_ovg_load_subcategories', 'ovg_load_subcategories' );
+
+function ovg_load_subcategories() {
+	if ( count($_POST) > 0 ) {
+		$parent_id = $_POST['parent_id'];
+		
+		$subcategories = get_terms('ovg_ztu_categories', array('orderby' => 'name', 'fields' => 'id=>name', 'hide_empty' => 0, 'parent' => $parent_id));
+		$subcategories = json_encode($subcategories);
+		echo $subcategories;
+		exit;
+	}
+}
 ?>
