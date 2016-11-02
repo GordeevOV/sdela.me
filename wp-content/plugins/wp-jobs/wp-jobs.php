@@ -116,6 +116,19 @@ function my_profile_new_fields_update(){
 	update_user_meta( $user_ID, "user_addinfo", $_POST['user_addinfo'] );
 }
 
+//Регистрация скрипта загрузки картинок
+add_action( 'admin_enqueue_scripts', 'ovg_include_myuploadscript' );
+function ovg_include_myuploadscript() {
+	// у вас в админке уже должен быть подключен jQuery, если нет - раскомментируйте следующую строку:
+	// wp_enqueue_script('jquery');
+	// дальше у нас идут скрипты и стили загрузчика изображений WordPress
+	if ( ! did_action( 'wp_enqueue_media' ) ) {
+		wp_enqueue_media();
+	}
+	// само собой - меняем admin.js на название своего файла
+ 	wp_enqueue_script( 'myuploadscript', WP_JOBS_URL . 'js/upload.js', array('jquery'), null, false );
+}
+
 //регистрация типа поля ЗТУ
 add_action( 'init', 'ovg_create_ztu_field' );
 
@@ -267,8 +280,79 @@ function ovg_ztu_meta_box_content($post) {
 			<tr>
 				<th style="width:300px;">Подробное описание:</th>
 				<td>
-					<textarea style="width:300px; height: 100px;" name="ztumetabox_descr" id="ztumetabox_descr"><?php if(isset($ztu_descr)) echo $car_descr;?></textarea>
+					<textarea style="width:300px; height: 100px;" name="ztumetabox_descr" id="ztumetabox_descr"><?php if(isset($ztu_descr)) echo $ztu_descr;?></textarea>
 				</td>
+			</tr>
+			
+			
+			<?php
+			$i = 0;
+			if ($ztu_photo) {
+		
+			foreach ($ztu_photo as $photo) {
+			
+				$w=115;
+				$h=90;
+				$default = get_stylesheet_directory_uri() . '/img/no-image.png';
+				if( $photo ) {
+					$image_attributes = wp_get_attachment_image_src( $photo, array($w, $h) );
+					$src = $image_attributes[0];
+				} else {
+					$src = $default;
+				}
+			?>
+			<tr>
+				<th style="width:300px;">Изображения:</th>
+				<td>
+					<div style="float: left;">
+						<img data-src="<?php echo $default?>" src="<?php echo $src?>" width="<?php echo $w?>px" />
+						
+						<div>
+							<input type="hidden" name="ztumetabox_number[<?php echo $i; ?>]" class="ztumetabox_number" value="<?php echo $i; ?>" />
+							<input type="hidden" name="ztumetabox_photo[<?php echo $i; ?>]" id="ztumetabox_photo[<?php echo $i; ?>]" value="<?php echo $photo?>" />
+							<button type="submit" class="upload_image_button button">Загрузить</button>
+							<button type="submit" class="remove_image_button button">&times;</button>
+						</div>
+					</div>
+				</td>
+			</tr>
+			
+			<?php
+			$i++;
+			}
+			}
+			else {
+				$w=115;
+				$h=90;
+				$default = get_stylesheet_directory_uri() . '/img/no-image.png';
+				if( $photo ) {
+					$image_attributes = wp_get_attachment_image_src( $photo, array($w, $h) );
+					$src = $image_attributes[0];
+				} else {
+					$src = $default;
+				}
+			?>
+			<tr>
+				<th style="width:300px;">Изображения:</th>
+				<td>
+					<div style="float: left;">
+						<img data-src="<?php echo $default?>" src="<?php echo $src?>" width="<?php echo $w?>px" />
+						<div>
+							<input type="hidden" name="ztumetabox_number[0]" class="ztumetabox_number" value="0" />
+							<input type="hidden" name="ztumetabox_photo[0]" id="ztumetabox_photo[0]" value="" />
+							<button type="submit" class="upload_image_button button">Загрузить</button>
+							<button type="submit" class="remove_image_button button">&times;</button>
+						</div>
+					</div>
+				</td>
+			</tr>
+			
+			<?php
+			}
+			?>
+			<tr>
+				<th></th>
+				<td><button type="submit" class="add_image_button button">Добавить изображения</button></td>
 			</tr>
 		</tbody>
 	</table>
@@ -303,7 +387,40 @@ function ovg_ztu_meta_box_content($post) {
 }
 
 function ovg_save_ztu_metabox($post_id) {
-	
+	$post = get_post($post_id);
+	if($_POST){
+		$ztu_type = "";
+		if(isset($_POST['ztumetabox_type'])){	
+			$ztu_type = $_POST['ztumetabox_type'];
+		}
+		
+		$ztu_category = "";
+		if(isset($_POST['ztumetabox_category'])){	
+			$ztu_category = $_POST['ztumetabox_category'];
+		}
+		
+		$ztu_subcategory = "";
+		if(isset($_POST['ztumetabox_subcategory'])){	
+			$ztu_subcategory = $_POST['ztumetabox_subcategory'];
+		}
+		
+		$ztu_descr = "";
+		if(isset($_POST['ztumetabox_descr'])){	
+			$ztu_descr = $_POST['ztumetabox_descr'];
+		}
+		
+		$ztu_photo = "";
+		if(isset($_POST['ztumetabox_photo'])){	
+			$ztu_photo = $_POST['ztumetabox_photo'];
+			$ztu_photo = array_diff($ztu_photo, array('')); //Удаляем все пустые элементы из массива
+		}
+		
+		update_post_meta($post->ID, 'ztu_type', $ztu_type);
+		update_post_meta($post->ID, 'ztu_category', $ztu_category);
+		update_post_meta($post->ID, 'ztu_subcategory', $ztu_subcategory);
+		update_post_meta($post->ID, 'ztu_descr', $ztu_descr);
+		update_post_meta($post->ID, 'ztu_photo', $ztu_photo);
+	}
 }
 
 //-------------AJAX functions--------------------
