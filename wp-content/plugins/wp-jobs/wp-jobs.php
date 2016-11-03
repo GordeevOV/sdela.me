@@ -128,6 +128,10 @@ function ovg_include_myuploadscript() {
 	// само собой - меняем admin.js на название своего файла
  	wp_enqueue_script( 'myuploadscript', WP_JOBS_URL . 'js/upload.js', array('jquery'), null, false );
  	wp_enqueue_style('admin_styles', WP_JOBS_URL . 'css/admin.css');
+ 	// подключаем все необходимые скрипты: jQuery, jquery-ui, datepicker
+	wp_enqueue_script('jquery-ui-datepicker');
+	// подключаем нужные css стили
+	wp_enqueue_style('jqueryui', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css', false, null );
 }
 
 
@@ -236,7 +240,7 @@ function ovg_ztu_meta_box_content($post) {
 			<tr>
 				<th style="width:300px;">Тип:</th>
 				<td>
-					<select name="ztumetabox_type" id="ztumetabox_type" style="width:300px;">
+					<select name="ztumetabox_type" id="ztumetabox_type">
 					
 					<?php 
 						$types = get_terms('ovg_ztu_type', array('orderby' => 'name', 'fields' => 'names', 'hide_empty' => 0));
@@ -255,7 +259,7 @@ function ovg_ztu_meta_box_content($post) {
 			<tr>
 				<th style="width:300px;">Категория:</th>
 				<td>
-					<select name="ztumetabox_category" id="ztumetabox_category" style="width:300px;">
+					<select name="ztumetabox_category" id="ztumetabox_category">
 					
 					<?php 
 						$categories = get_terms('ovg_ztu_categories', array('orderby' => 'name', 'fields' => 'id=>name', 'hide_empty' => 0, 'parent' => 0));
@@ -274,7 +278,7 @@ function ovg_ztu_meta_box_content($post) {
 			<tr>
 				<th style="width:300px;">Подкатегория:</th>
 				<td>
-					<select name="ztumetabox_subcategory" id="ztumetabox_subcategory" style="width:300px;">
+					<select name="ztumetabox_subcategory" id="ztumetabox_subcategory">
 					
 					<?php
 					
@@ -297,7 +301,7 @@ function ovg_ztu_meta_box_content($post) {
 			<tr>
 				<th style="width:300px;">Подробное описание:</th>
 				<td>
-					<textarea style="width:300px; height: 100px;" name="ztumetabox_descr" id="ztumetabox_descr"><?php if(isset($ztu_descr)) echo $ztu_descr;?></textarea>
+					<textarea name="ztumetabox_descr" id="ztumetabox_descr"><?php if(isset($ztu_descr)) echo $ztu_descr;?></textarea>
 				</td>
 			</tr>
 			
@@ -391,6 +395,23 @@ function ovg_ztu_meta_box_content($post) {
 				<th></th>
 				<td><button type="submit" class="add_image_button button">Добавить изображения</button></td>
 			</tr>
+			
+			<tr>
+				<th style="width:300px;">Ссылка на видео:</th>
+				<td>
+					<input type="text" name="ztumetabox_video" id="ztumetabox_video" value="<?php if(isset($ztu_video)) echo $ztu_video;?>" />
+				</td>
+			</tr>
+			
+			<tr>
+				<th style="width:300px;">Даты начала-окончания:</th>
+				<td>
+					<input class="datepicker" type="text" name="ztumetabox_begin" id="ztumetabox_begin" value="<?php if(isset($ztu_begin)) echo $ztu_begin;?>" />
+					<span> - </span>
+					<input class="datepicker" type="text" name="ztumetabox_end" id="ztumetabox_end" value="<?php if(isset($ztu_end)) echo $ztu_end;?>" />
+				</td>
+			</tr>
+			
 		</tbody>
 	</table>
 
@@ -462,6 +483,21 @@ function ovg_save_ztu_metabox($post_id) {
 			$ztu_photo = array_diff($ztu_photo, array('')); //Удаляем все пустые элементы из массива
 		}
 		
+		$ztu_video = "";
+		if(isset($_POST['ztumetabox_video'])){	
+			$ztu_video = $_POST['ztumetabox_video'];
+		}
+		
+		$ztu_begin = "";
+		if(isset($_POST['ztumetabox_begin'])){	
+			$ztu_begin = $_POST['ztumetabox_begin'];
+		}
+		
+		$ztu_end = "";
+		if(isset($_POST['ztumetabox_end'])){	
+			$ztu_end = $_POST['ztumetabox_end'];
+		}
+		
 		update_post_meta($post->ID, 'ztu_type', $ztu_type);
 		update_post_meta($post->ID, 'ztu_category', $ztu_category);
 		update_post_meta($post->ID, 'ztu_subcategory', $ztu_subcategory);
@@ -469,6 +505,9 @@ function ovg_save_ztu_metabox($post_id) {
 		update_post_meta($post->ID, 'ztu_price', $ztu_price);
 		update_post_meta($post->ID, 'ztu_price_type', $ztu_price_type);
 		update_post_meta($post->ID, 'ztu_photo', $ztu_photo);
+		update_post_meta($post->ID, 'ztu_video', $ztu_video);
+		update_post_meta($post->ID, 'ztu_begin', $ztu_begin);
+		update_post_meta($post->ID, 'ztu_end', $ztu_end);
 	}
 }
 

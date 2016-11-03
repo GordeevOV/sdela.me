@@ -1,3 +1,20 @@
+#ztumetabox_type {
+	width: 99%;
+}
+
+#ztumetabox_category {
+	width: 99%;
+}
+
+#ztumetabox_subcategory {
+	width: 99%;
+}
+
+#ztumetabox_descr {
+	width: 99%;
+	height: 150px;
+}
+
 #ztumetabox_price {
 	width: 48%;
 	margin-left: 0px;
@@ -8,4 +25,18 @@
 	height: 27px;
     margin-top: -4px;
     margin-left: 6px;
+}
+
+#ztumetabox_video {
+	width: 99%;
+}
+
+#ztumetabox_begin {
+	width: 47%;
+	margin-right: 2px;
+}
+
+#ztumetabox_end {
+	width: 47%;
+	margin-left: 2px;
 }
