@@ -127,7 +127,10 @@ function ovg_include_myuploadscript() {
 	}
 	// само собой - меняем admin.js на название своего файла
  	wp_enqueue_script( 'myuploadscript', WP_JOBS_URL . 'js/upload.js', array('jquery'), null, false );
+ 	wp_enqueue_style('admin_styles', WP_JOBS_URL . 'css/admin.css');
 }
+
+
 
 //регистрация типа поля ЗТУ
 add_action( 'init', 'ovg_create_ztu_field' );
@@ -184,6 +187,16 @@ function ovg_create_ztu_taxonomy() {
 			'meta_box_cb' => FALSE
 		)
 	);
+	
+	register_taxonomy(	//Категории
+		'ovg_ztu_price_type',
+		'ovg_ztu',
+		array(
+			'label' => 'Типы цен',
+			'hierarchical' => FALSE,
+			'meta_box_cb' => FALSE
+		)
+	);
 }
 
 //Редактирование ЗТУ
@@ -207,6 +220,7 @@ function ovg_ztu_meta_box_content($post) {
 	$ztu_category = get_post_meta($post->ID, 'ztu_category', true);
 	$ztu_subcategory = get_post_meta($post->ID, 'ztu_subcategory', true);
 	$ztu_price = get_post_meta($post->ID, 'ztu_price', true);
+	$ztu_price_type = get_post_meta($post->ID, 'ztu_price_type', true);
 	$ztu_place = get_post_meta($post->ID, 'ztu_place', true);
 	$ztu_descr = get_post_meta($post->ID, 'ztu_descr', true);
 	$ztu_photo = get_post_meta($post->ID, 'ztu_photo', true);
@@ -234,6 +248,7 @@ function ovg_ztu_meta_box_content($post) {
 						
 						
 					<?php endforeach;?>
+					</select>
 				</td>
 			</tr>
 
@@ -252,6 +267,7 @@ function ovg_ztu_meta_box_content($post) {
 						
 						
 					<?php endforeach;?>
+					</select>
 				</td>
 			</tr>
 			
@@ -274,6 +290,7 @@ function ovg_ztu_meta_box_content($post) {
 					<?php endforeach;
 					}
 					?>
+					</select>
 				</td>
 			</tr>
 			
@@ -284,6 +301,26 @@ function ovg_ztu_meta_box_content($post) {
 				</td>
 			</tr>
 			
+			<tr>
+				<th style="width:300px;">Цена:</th>
+				<td>
+					<input type="text" name="ztumetabox_price" id="ztumetabox_price" value="<?php if(isset($ztu_price)) echo $ztu_price;?>" />
+					<select name="ztumetabox_price_type" id="ztumetabox_price_type">
+					
+					<?php 
+						$price_types = get_terms('ovg_ztu_price_type', array('orderby' => 'name', 'fields' => 'id=>name', 'hide_empty' => 0));
+						//print_r($types);
+						foreach($price_types as $price_type_id=>$price_type_name):
+					?>
+					
+						<option value="<?php echo $price_type_id?>" <?php if($ztu_price_type == $price_type_id) echo 'selected'; ?>><?php echo $price_type_name?></option>
+						
+						
+					<?php endforeach;?>
+					</select>
+					
+				</td>
+			</tr>
 			
 			<?php
 			$i = 0;
@@ -409,6 +446,16 @@ function ovg_save_ztu_metabox($post_id) {
 			$ztu_descr = $_POST['ztumetabox_descr'];
 		}
 		
+		$ztu_price = "";
+		if(isset($_POST['ztumetabox_price'])){	
+			$ztu_price = $_POST['ztumetabox_price'];
+		}
+		
+		$ztu_price_type = "";
+		if(isset($_POST['ztumetabox_price_type'])){	
+			$ztu_price_type = $_POST['ztumetabox_price_type'];
+		}
+		
 		$ztu_photo = "";
 		if(isset($_POST['ztumetabox_photo'])){	
 			$ztu_photo = $_POST['ztumetabox_photo'];
@@ -419,6 +466,8 @@ function ovg_save_ztu_metabox($post_id) {
 		update_post_meta($post->ID, 'ztu_category', $ztu_category);
 		update_post_meta($post->ID, 'ztu_subcategory', $ztu_subcategory);
 		update_post_meta($post->ID, 'ztu_descr', $ztu_descr);
+		update_post_meta($post->ID, 'ztu_price', $ztu_price);
+		update_post_meta($post->ID, 'ztu_price_type', $ztu_price_type);
 		update_post_meta($post->ID, 'ztu_photo', $ztu_photo);
 	}
 }
