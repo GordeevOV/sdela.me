@@ -122,7 +122,10 @@ load_theme_textdomain( 'devdmbootstrap3', get_template_directory() . '/languages
         'left_sidebar' => false,
         'left_sidebar_width' => 3,
         'show_header' => true,
-        'show_postmeta' => true
+        'show_postmeta' => true,
+        'mainpage_header' => '',
+        'mainpage_text' => '',
+        'mainpage_buttontext' => ''
     );
 
     $dm_sidebar_sizes = array(
@@ -307,6 +310,27 @@ load_theme_textdomain( 'devdmbootstrap3', get_template_directory() . '/languages
                         <td>
                             <input type="checkbox" id="author_credits" name="dm_options[author_credits]" value="1" <?php checked( true, $settings['author_credits'] ); ?> />
                             <label for="author_credits"><?php _e('Show me some love and keep a link to DevDm.com in your footer.','devdmbootstrap3') ;?></label>
+                        </td>
+                    </tr>
+                    
+                    <tr valign="top"><th scope="row"><?php _e('Заголовок главной страницы','devdmbootstrap3') ;?></th>
+                        <td>
+                            <textarea style="width: 300px; height: 100px;" id="mainpage_header" name="dm_options[mainpage_header]"><?php echo($settings['mainpage_header'] ); ?> </textarea>
+                            <label for="mainpage_header" style="vertical-align: top;"><?php _e('Заголовок текста на главной странице','devdmbootstrap3') ;?></label>
+                        </td>
+                    </tr>
+                    
+                    <tr valign="top"><th scope="row"><?php _e('Текст главной страницы','devdmbootstrap3') ;?></th>
+                        <td>
+                            <textarea style="width: 300px; height: 100px;" id="mainpage_text" name="dm_options[mainpage_text]"><?php echo($settings['mainpage_text'] ); ?> </textarea>
+                            <label for="mainpage_text" style="vertical-align: top;"><?php _e('Текст на главной странице','devdmbootstrap3') ;?></label>
+                        </td>
+                    </tr>
+                    
+                    <tr valign="top"><th scope="row"><?php _e('Текст кнопки главной страницы','devdmbootstrap3') ;?></th>
+                        <td>
+                            <textarea style="width: 300px; height: 100px;" id="mainpage_buttontext" name="dm_options[mainpage_buttontext]"><?php echo($settings['mainpage_buttontext'] ); ?> </textarea>
+                            <label for="mainpage_buttontext" style="vertical-align: top;"><?php _e('Текст кнопки на главной странице','devdmbootstrap3') ;?></label>
                         </td>
                     </tr>
 

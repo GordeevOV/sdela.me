@@ -9,10 +9,17 @@
 <?php get_template_part('template-part', 'head'); ?>
 
 <?php // get_template_part('template-part', 'topnav'); ?>
-
+<?php
+            global $dm_settings;?>
 <div class="dmbs-mainpage">
 	<div class="container dmbs-container">
-	
+		<div class="row dmbs-content">
+			<div class="col-md-6 col-xs-12 mainpage_header">
+				<h3><?php echo $dm_settings['mainpage_header'] ?></h3>
+				<p><?php echo $dm_settings['mainpage_text'] ?></p>
+				<a type="button" class="btn btn-danger"><?php echo $dm_settings['mainpage_buttontext'] ?><img src="<?php echo get_template_directory_uri();?>/img/button.png"/></a>
+			</div>
+		</div>
 	</div>
 </div>
 
