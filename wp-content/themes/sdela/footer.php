@@ -1,15 +1,68 @@
-<div class="container dmbs-container">
-    <div class="dmbs-footer">
-        <?php
-            global $dm_settings;
-            if ($dm_settings['author_credits'] != 0) : ?>
-                <div class="row dmbs-author-credits">
-                    <p class="text-center"><a href="<?php global $developer_uri; echo esc_url($developer_uri); ?>">DevDmBootstrap3 <?php _e('created by','devdmbootstrap3') ?> Danny Machal</a></p>
-                </div>
-        <?php endif; ?>
+<div class="dmbs-footer-wrap">
+	<div class="container dmbs-container">
+	    <div class="dmbs-footer">
+	        <?php global $dm_settings;?>
+			<div class="row footer-top">
+				<div class="col-md-3 col-sm-6 col-xs-12 footer-logo">
+					<img src="<?php echo get_template_directory_uri();?>/img/logo-footer.jpg" alt="" />
+					<h1><?php bloginfo( 'name' ); ?></h1>
+                	<h4 class="custom-header-text-color"><?php bloginfo( 'description' ); ?></h4>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12 footer-menu">
+					<?php  dynamic_sidebar( 'footer-menu1' ); ?>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12 footer-menu">
+					<?php  dynamic_sidebar( 'footer-menu2' ); ?>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12 footer-menu">
+					<?php  dynamic_sidebar( 'footer-menu3' ); ?>
+				</div>
+			</div>
+			
+			<div class="row footer-social">
+				<div class="col-md-12">
+					<?php 
+					if ($dm_settings['facebook']) { ?>
+						<a href="<?php echo $dm_settings['facebook']?>"><i class="fa fa-facebook"  aria-hidden="true"></i></a>
+					<?php 
+					}
+					?>
+					<?php 
+					if ($dm_settings['twitter']) { ?>
+						<a href="<?php echo $dm_settings['twitter']?>"><i class="fa fa-twitter"  aria-hidden="true"></i></a>
+					<?php 
+					}
+					?>
+					<?php 
+					if ($dm_settings['gplus']) { ?>
+						<a href="<?php echo $dm_settings['gplus']?>"><i class="fa fa-google-plus"  aria-hidden="true"></i></a>
+					<?php 
+					}
+					?>
+					<?php 
+					if ($dm_settings['youtube']) { ?>
+						<a href="<?php echo $dm_settings['youtube']?>"><i class="fa fa-youtube-play"  aria-hidden="true"></i></a>
+					<?php 
+					}
+					?>
+					<?php 
+					if ($dm_settings['pinterest']) { ?>
+						<a href="<?php echo $dm_settings['pinterest']?>"><i class="fa fa-pinterest-p"  aria-hidden="true"></i></a>
+					<?php 
+					}
+					?>
+					<?php 
+					if ($dm_settings['instagram']) { ?>
+						<a href="<?php echo $dm_settings['instagram']?>"><i class="fa fa-instagram"  aria-hidden="true"></i></a>
+					<?php 
+					}
+					?>
+				</div>
+			</div>
+			
+	    </div>
 
-        <?php get_template_part('template-part', 'footernav'); ?>
-    </div>
+	</div>
 
 </div>
 <!-- end main container -->

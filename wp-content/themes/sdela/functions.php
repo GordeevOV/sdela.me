@@ -25,6 +25,7 @@
         wp_register_style('bootstrap.css', get_template_directory_uri() . '/css/bootstrap.css', array(), '1', 'all' );
         wp_enqueue_style( 'bootstrap.css');
         wp_enqueue_style( 'stylesheet', get_stylesheet_uri(), array(), '1', 'all' );
+        wp_enqueue_style('font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css');
     }
     add_action('wp_enqueue_scripts', 'devdmbootstrap3_theme_stylesheets');
 
@@ -98,6 +99,36 @@ if(!function_exists( '_wp_render_title_tag')) {
             array(
             'name' => 'Left Sidebar',
             'id' => 'left-sidebar',
+            'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+            'after_widget' => '</aside>',
+            'before_title' => '<h3>',
+            'after_title' => '</h3>',
+        ));
+        
+        register_sidebar(
+            array(
+            'name' => 'Footer Menu 1',
+            'id' => 'footer-menu1',
+            'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+            'after_widget' => '</aside>',
+            'before_title' => '<h3>',
+            'after_title' => '</h3>',
+        ));
+        
+        register_sidebar(
+            array(
+            'name' => 'Footer Menu 2',
+            'id' => 'footer-menu2',
+            'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+            'after_widget' => '</aside>',
+            'before_title' => '<h3>',
+            'after_title' => '</h3>',
+        ));
+        
+        register_sidebar(
+            array(
+            'name' => 'Footer Menu 3',
+            'id' => 'footer-menu3',
             'before_widget' => '<aside id="%1$s" class="widget %2$s">',
             'after_widget' => '</aside>',
             'before_title' => '<h3>',

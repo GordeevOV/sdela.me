@@ -45,6 +45,7 @@ Version: 1.0
 
 body {
 	background-color: #f8f8f8;
+	padding-bottom: 0px;
 }
 
 .dmbs-container {
@@ -191,8 +192,12 @@ body {
 	
 }
 
-.dmbs-main {
-	
+.dmbs-main h2 {
+	text-align: center;
+	border: none;
+	font-family: museo_sans_cyrl300, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #000000;
+	font-size: 25px;
 }
 
 .dmbs-left {
@@ -212,5 +217,79 @@ body {
 }
 
 .dmbs-footer {
+	
+}
 
+.dmbs-footer-wrap {
+	background-color: #3f3f3f;
+}
+
+.dmbs-footer img {
+	float: left;
+	margin-right: 20px;
+}
+
+.dmbs-footer h1 {
+	font-family: houschka_roundedbold;
+	font-weight: bold;
+	font-size: 22px;
+	color: #828282;
+}
+
+.dmbs-footer h4 {
+	font-family: museo_sans_cyrl300, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 15px;
+	color: #828282;
+	margin-top: -10px;
+
+}
+
+.footer-logo {
+	padding-top: 75px;
+    padding-bottom: 75px;
+}
+
+.footer-menu {
+	padding-top: 40px;
+}
+
+.footer-menu ul {
+	list-style: none;
+}
+
+.footer-menu ul>li>a {
+	font-family: museo_sans_cyrl300, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 15px;
+	color: #c4c4c4;
+	line-height: 25px
+}
+
+.footer-menu ul>li>a:hover {
+	background-color: transparent;
+	border-bottom: none;
+}
+
+.footer-top {
+	border-bottom: solid 1px #525252;
+}
+
+.footer-social {
+	text-align: center;
+	padding-bottom: 40px;
+	padding-top: 40px;
+}
+
+.footer-social .fa {
+	font-size: 35px;
+	color: #828282;
+	margin: 0px 10px 0px 10px;
+}
+
+.footer-social .fa:hover {
+	color: #ffffff;
+}
+
+.footer-social a:hover {
+	background-color: transparent;
+	border-bottom: none;
 }

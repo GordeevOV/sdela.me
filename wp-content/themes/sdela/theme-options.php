@@ -125,7 +125,13 @@ load_theme_textdomain( 'devdmbootstrap3', get_template_directory() . '/languages
         'show_postmeta' => true,
         'mainpage_header' => '',
         'mainpage_text' => '',
-        'mainpage_buttontext' => ''
+        'mainpage_buttontext' => '',
+        'facebook' => '',
+        'twitter' => '',
+        'gplus' => '',
+        'youtube' => '',
+        'pinterest' => '',
+        'instagram' => '',
     );
 
     $dm_sidebar_sizes = array(
@@ -333,7 +339,49 @@ load_theme_textdomain( 'devdmbootstrap3', get_template_directory() . '/languages
                             <label for="mainpage_buttontext" style="vertical-align: top;"><?php _e('Текст кнопки на главной странице','devdmbootstrap3') ;?></label>
                         </td>
                     </tr>
-
+					
+					<tr valign="top"><th scope="row"><?php _e('Facebook','devdmbootstrap3') ;?></th>
+                        <td>
+                            <input style="width: 300px;" id="facebook" name="dm_options[facebook]" value="<?php echo($settings['facebook'] ); ?>" />
+                            <label for="mainpage_buttontext" style="vertical-align: top;"><?php _e('Ссылка на аккаунт Facebook','devdmbootstrap3') ;?></label>
+                        </td>
+                    </tr>
+                    
+                    <tr valign="top"><th scope="row"><?php _e('Twitter','devdmbootstrap3') ;?></th>
+                        <td>
+                            <input style="width: 300px;" id="twitter" name="dm_options[twitter]" value="<?php echo($settings['twitter'] ); ?>" />
+                            <label for="mainpage_buttontext" style="vertical-align: top;"><?php _e('Ссылка на аккаунт Twitter','devdmbootstrap3') ;?></label>
+                        </td>
+                    </tr>
+                    
+                    <tr valign="top"><th scope="row"><?php _e('Google Plus','devdmbootstrap3') ;?></th>
+                        <td>
+                            <input style="width: 300px;" id="gplus" name="dm_options[gplus]" value="<?php echo($settings['gplus'] ); ?>" />
+                            <label for="mainpage_buttontext" style="vertical-align: top;"><?php _e('Ссылка на аккаунт Google Plus','devdmbootstrap3') ;?></label>
+                        </td>
+                    </tr>
+                    
+                    <tr valign="top"><th scope="row"><?php _e('Youtube','devdmbootstrap3') ;?></th>
+                        <td>
+                            <input style="width: 300px;" id="youtube" name="dm_options[youtube]" value="<?php echo($settings['youtube'] ); ?>" />
+                            <label for="mainpage_buttontext" style="vertical-align: top;"><?php _e('Ссылка на аккаунт Youtube','devdmbootstrap3') ;?></label>
+                        </td>
+                    </tr>
+                    
+                    <tr valign="top"><th scope="row"><?php _e('Pinterest','devdmbootstrap3') ;?></th>
+                        <td>
+                            <input style="width: 300px;" id="pinterest" name="dm_options[pinterest]" value="<?php echo($settings['pinterest'] ); ?>" />
+                            <label for="mainpage_buttontext" style="vertical-align: top;"><?php _e('Ссылка на аккаунт Pinterest','devdmbootstrap3') ;?></label>
+                        </td>
+                    </tr>
+                    
+                    <tr valign="top"><th scope="row"><?php _e('Instagram','devdmbootstrap3') ;?></th>
+                        <td>
+                            <input style="width: 300px;" id="instagram" name="dm_options[instagram]" value="<?php echo($settings['instagram'] ); ?>" />
+                            <label for="mainpage_buttontext" style="vertical-align: top;"><?php _e('Ссылка на аккаунт Instagram','devdmbootstrap3') ;?></label>
+                        </td>
+                    </tr>
+                    
                 </table>
 
                 <p class="submit">
