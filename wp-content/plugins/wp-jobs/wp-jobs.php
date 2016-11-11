@@ -511,6 +511,35 @@ function ovg_save_ztu_metabox($post_id) {
 	}
 }
 
+//регистрация типа поля записей на главной
+add_action( 'init', 'ovg_create_mainpage_field' );
+
+function ovg_create_mainpage_field() {
+	register_post_type( 'ovg_mainpage',	
+        array(
+            'labels' => array(
+                'name' => 'Записи на главной',
+                'singular_name' => 'Запись на главной',
+                'add_new' => 'Добавить',
+                'add_new_item' => 'Добавить',
+                'edit' => 'Редактировать',
+                'edit_item' => 'Редактировать',
+                'new_item' => 'Создать',
+                'view' => 'Просмотреть',
+                'view_item' => 'Просмотреть',
+                'search_items' => 'Найти',
+                'not_found' => 'Не найлено',
+                'not_found_in_trash' => 'Не найлено в корзине'
+            ),
+            'public' => true,
+            'menu_position' => 15,
+            'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt'),
+            'taxonomies' => array( '' ),
+            'has_archive' => false
+        )
+    );		
+}
+
 //-------------AJAX functions--------------------
 add_action( 'wp_ajax_nopriv_ovg_load_subcategories','ovg_load_subcategories' );
 add_action( 'wp_ajax_ovg_load_subcategories', 'ovg_load_subcategories' );
