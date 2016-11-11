@@ -36,10 +36,34 @@
         if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
             <h2 class="page-header"><?php the_title() ;?></h2>
-            <?php the_content(); ?>
-            <?php wp_link_pages(); ?>
-            <?php comments_template(); ?>
-
+            
+            <div class="row">
+            <?php $args = array('numberposts' => 6, 'post_type' => 'ovg_mainpage');
+        	$myposts = get_posts( $args );
+        	
+        	$i=1;
+        	foreach( $myposts as $post ){ 
+        		setup_postdata($post);
+        	?>
+				<div class="col-md-6 col-xs-12">
+					<div class="main-page-img">
+						<?php echo get_the_post_thumbnail();?>
+					</div>
+					<div class="main-page-header">
+						<h3><?php echo get_the_title();?></h3>
+					</div>
+					<div class="main-page-text">
+						<p><?php echo get_the_content();?></p>
+					</div>
+				</div>
+			<?php
+			if($i%2 == 0) {
+				echo "</div><div class='row'>";
+			}
+			$i++;
+			}
+			?>
+			</div>
         <?php endwhile; ?>
         <?php else: ?>
 
