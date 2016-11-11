@@ -7,7 +7,7 @@ load_theme_textdomain( 'devdmbootstrap3', get_template_directory() . '/languages
 ////////////////////////////////////////////////////////////////////
 
     function dmbs_theme_options_menu() {
-        add_theme_page( 'DevDm Theme' . __('Options','devdmbootstrap3'), 'DevDm' . __('Options','devdmbootstrap3'), 'manage_options', 'devdm-theme-options', 'devdm_theme_options' );
+        add_theme_page( 'DevDm Theme' . __('Options','devdmbootstrap3'), 'Опции сайта', 'manage_options', 'devdm-theme-options', 'devdm_theme_options' );
     }
     add_action( 'admin_menu', 'dmbs_theme_options_menu' );
 
@@ -16,7 +16,7 @@ load_theme_textdomain( 'devdmbootstrap3', get_template_directory() . '/languages
     function toolbar_link_to_dmbs_options( $wp_admin_bar ) {
         $args = array(
             'id'    => 'devdm_theme_options',
-            'title' => __('DevDm Options','devdmbootstrap3'),
+            'title' => __('Опции сайта','devdmbootstrap3'),
             'href'  => home_url() . '/wp-admin/themes.php?page=devdm-theme-options',
             'meta'  => array( 'class' => 'devdm-theme-options' ),
             'parent' => 'site-name'
@@ -237,11 +237,11 @@ load_theme_textdomain( 'devdmbootstrap3', get_template_directory() . '/languages
 
         <div class="wrap">
 
-        <div class="dm-logo-wrap"><a href="<?php echo $developer_uri ?>" target="_blank"><img src="<?php echo $logo; ?>" class="dm-logo" title="Created by Danny Machal @ DevDm.com" /></a></div>
+        <div class="dm-logo-wrap"></div>
 
             <div class="icon32" id="icon-options-general"></div>
 
-            <h2><a href="<?php echo $developer_uri ?>" target="_blank">DevDmBootstrap3</a></h2>
+            <h2>Опции</h2>
 
                <?php
 
@@ -266,7 +266,7 @@ load_theme_textdomain( 'devdmbootstrap3', get_template_directory() . '/languages
 
                 <table cellpadding='10'>
 
-                    <tr valign="top"><th scope="row"><?php _e('Right Sidebar','devdmbootstrap3') ;?></th>
+                    <!--<tr valign="top"><th scope="row"><?php _e('Right Sidebar','devdmbootstrap3') ;?></th>
                         <td>
                             <input type="checkbox" id="right_sidebar" name="dm_options[right_sidebar]" value="1" <?php checked( true, $settings['right_sidebar'] ); ?> />
                             <label for="right_sidebar"><?php _e('Show the Right Sidebar','devdmbootstrap3') ;?></label>
@@ -317,7 +317,7 @@ load_theme_textdomain( 'devdmbootstrap3', get_template_directory() . '/languages
                             <input type="checkbox" id="author_credits" name="dm_options[author_credits]" value="1" <?php checked( true, $settings['author_credits'] ); ?> />
                             <label for="author_credits"><?php _e('Show me some love and keep a link to DevDm.com in your footer.','devdmbootstrap3') ;?></label>
                         </td>
-                    </tr>
+                    </tr>-->
                     
                     <tr valign="top"><th scope="row"><?php _e('Заголовок главной страницы','devdmbootstrap3') ;?></th>
                         <td>
