@@ -266,7 +266,7 @@ load_theme_textdomain( 'devdmbootstrap3', get_template_directory() . '/languages
 
                 <table cellpadding='10'>
 
-                    <!--<tr valign="top"><th scope="row"><?php _e('Right Sidebar','devdmbootstrap3') ;?></th>
+                    <tr valign="top"><th scope="row"><?php _e('Right Sidebar','devdmbootstrap3') ;?></th>
                         <td>
                             <input type="checkbox" id="right_sidebar" name="dm_options[right_sidebar]" value="1" <?php checked( true, $settings['right_sidebar'] ); ?> />
                             <label for="right_sidebar"><?php _e('Show the Right Sidebar','devdmbootstrap3') ;?></label>
@@ -317,7 +317,7 @@ load_theme_textdomain( 'devdmbootstrap3', get_template_directory() . '/languages
                             <input type="checkbox" id="author_credits" name="dm_options[author_credits]" value="1" <?php checked( true, $settings['author_credits'] ); ?> />
                             <label for="author_credits"><?php _e('Show me some love and keep a link to DevDm.com in your footer.','devdmbootstrap3') ;?></label>
                         </td>
-                    </tr>-->
+                    </tr>
                     
                     <tr valign="top"><th scope="row"><?php _e('Заголовок главной страницы','devdmbootstrap3') ;?></th>
                         <td>

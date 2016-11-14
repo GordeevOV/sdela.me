@@ -61,7 +61,7 @@
 			<img src="<?php echo get_template_directory_uri();?>/img/logo2.jpg" alt="" />
 			<div>
 				<a href="#">Вход</a>
-				<a href="#">Регистрация</a>
+				<a href="javascript:PopupShow();">Регистрация</a>
 			</div>
 		</div>
 

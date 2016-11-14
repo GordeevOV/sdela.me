@@ -68,5 +68,38 @@
 <!-- end main container -->
 
 <?php wp_footer(); ?>
+
+<!--Всплывающее окно регистрации-->
+
+<div class="b-popup">
+    <div class="b-popup-content">
+        Text in Popup
+        <div class="close-popup">
+        	<!--<img src="<?php echo get_template_directory_uri();?>/img/cross.png" />-->
+        	<i class="fa fa-times"></i>
+    	</div>
+    </div>
+    <div class="close-popup">
+    </div>
+</div>
+
+<script>
+	function PopupShow() {
+		jQuery('.b-popup').show();
+		jQuery('.b-popup-content').show();
+		jQuery('.close-popup').show();
+	}
+	
+	function PopupHide() {
+		jQuery('.b-popup').hide();
+		jQuery('.b-popup-content').hide();
+		jQuery('.close-popup').hide();
+	}
+	
+	jQuery('.close-popup').click(function(){
+		PopupHide();
+	});
+</script>
+
 </body>
 </html>
