@@ -73,7 +73,10 @@
 
 <div class="b-popup">
     <div class="b-popup-content">
-        Text in Popup
+    	<h3>Добро пожаловать.</h3>
+    	<p>Все данные доступны только зарегистрированым пользователям.</p>
+    	<p>Попробуйте бесплатно в течение 14 дней. Без риска и кредитных карт.</p>
+        <?php  dynamic_sidebar( 'register-popup' ); ?>
         <div class="close-popup">
         	<!--<img src="<?php echo get_template_directory_uri();?>/img/cross.png" />-->
         	<i class="fa fa-times"></i>

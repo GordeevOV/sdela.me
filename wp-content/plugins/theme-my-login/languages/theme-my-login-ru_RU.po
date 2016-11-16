@@ -1,0 +1,1269 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Theme My Login 6.3.11\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/theme-my-login\n"
+"POT-Creation-Date: 2015-03-31 17:39:01+00:00\n"
+"PO-Revision-Date: Wed Jul 08 2015 14:44:20 GMT+0300 (Финляндия (лето))\n"
+"Last-Translator: Антон Третьяк <lassisupermarket@gmail.com>\n"
+"Language-Team: \n"
+"Language: Russian\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 && "
+"n%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Loco - https://localise.biz/\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
+"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
+"_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
+"esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
+"esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
+"X-Loco-Target-Locale: ru_RU"
+
+#, c-format
+msgid "%s ago"
+msgstr "%s назад"
+
+#, c-format
+msgid "%s is your new username"
+msgstr "%s ваш новый ник"
+
+msgid "(Must be at least 4 characters, letters and numbers only.)"
+msgstr "( Должно быть не менее 4 символов , только буквы и цифры )."
+
+msgid "(Must be at least 6 characters.)"
+msgstr "( Должно быть не менее 6 символов )."
+
+msgid "(required)"
+msgstr "(отображается на сайте)"
+
+#, c-format
+msgid ""
+"<a href=\"http://%1$s\">http://%2$s</a> is your new site.  <a href=\"%3$s\">Log "
+"in</a> as &#8220;%4$s&#8221; using your existing password."
+msgstr ""
+"<a href=\"http://%1$s\">http://%2$s</a> ваш новый сайт.  <a "
+"href=\"%3$s\">Войти</a> as &#8220;%4$s&#8221; использую существующий пароль."
+
+#, c-format
+msgid ""
+"<p><em>The site you were looking for, <strong>%s</strong> does not exist, "
+"but you can create it now!</em></p>"
+msgstr ""
+"<p><em>Сайт, который вы ищите, <strong>%s</strong> не существует, но вы "
+"можете создать его сейчас!</em></p>"
+
+#, c-format
+msgid ""
+"<p><em>The site you were looking for, <strong>%s</strong>, does not exist."
+"</em></p>"
+msgstr "<p><em>Сайт, который вы ищите, <strong>%s</strong>, не существует.</em></p>"
+
+#, c-format
+msgid ""
+"<strong>ERROR</strong>: Couldn&#8217;t register you... please contact the <a "
+"href=\"mailto:%s\">webmaster</a> !"
+msgstr ""
+"<strong>Ошибка</strong>: Couldn&#8217;t register you... please contact the "
+"<a href=\"mailto:%s\">webmaster</a> !"
+
+msgid "<strong>ERROR</strong>: Enter a username or e-mail address."
+msgstr "<strong>Ошибка</strong>:Введите имя пользователя или адрес электронной почты."
+
+msgid "<strong>ERROR</strong>: Incorrect captcha code."
+msgstr "<strong>Ошибка</strong>: Некорректно распознано изображение"
+
+msgid "<strong>ERROR</strong>: Invalid reCAPTCHA challenge parameter."
+msgstr "<strong>Ошибка</strong>: Неверный параметр reCAPTCHAr."
+
+msgid "<strong>ERROR</strong>: Invalid reCAPTCHA private key."
+msgstr "<strong>Ошибка</strong>:Неправильно распознали код reCAPTCHA."
+
+msgid "<strong>ERROR</strong>: Invalid username or e-mail."
+msgstr ""
+"<strong>Ошибка</strong>: Неверное имя пользователя или адрес электронной "
+"почты ."
+
+msgid "<strong>ERROR</strong>: Passwords may not contain the character \"\\\"."
+msgstr "<strong>Ошибка</strong>: Пароль не может содержать символ \"\\\"."
+
+msgid "<strong>ERROR</strong>: Please enter a username."
+msgstr "<strong>ERROR</strong>: Пожалуйста, введите имя пользователя."
+
+msgid ""
+"<strong>ERROR</strong>: Please enter the same password in the two password "
+"fields."
+msgstr "<strong>Ошибка</strong>: Пожалуйста, введите одинаковые пароли"
+
+msgid "<strong>ERROR</strong>: Please enter your password twice."
+msgstr "<strong>Ошибка</strong>: Пожалуйста, введите пароль ещё раз."
+
+msgid "<strong>ERROR</strong>: Please type your e-mail address."
+msgstr "<strong>Ошибка</strong>: Пожалуйста, введите свой адрес электронной почты."
+
+msgid "<strong>ERROR</strong>: Sorry, that key does not appear to be valid."
+msgstr "<strong>Ошибка</strong>: Извините, но этот ключ недопустим"
+
+msgid "<strong>ERROR</strong>: Sorry, the activation e-mail could not be sent."
+msgstr ""
+"<strong>Ошибка</strong>: К сожалению, письмо активации не может быть "
+"отправлено "
+
+msgid "<strong>ERROR</strong>: The email address isn&#8217;t correct."
+msgstr "<strong>Ошибка</strong>: Адрес электронной почты &#8217;введён не правильно."
+
+msgid "<strong>ERROR</strong>: There is no user registered with that email address."
+msgstr "<strong>Ошибка</strong>: Нет пользователя с таким адресом электронной почты."
+
+#, c-format
+msgid ""
+"<strong>ERROR</strong>: This account has been locked because of too many "
+"failed login attempts. You may try again in %s."
+msgstr ""
+"<strong>Ошибка</strong>: Эта учетная запись была заблокирована из-за слишком "
+"частых неудачных попыток входа в систему. Вы можете попробовать снова в %s."
+
+msgid "<strong>ERROR</strong>: This account has been locked."
+msgstr "<strong>Ошибка</strong>: Эта учетная запись была заблокирована ."
+
+msgid ""
+"<strong>ERROR</strong>: This email is already registered, please choose "
+"another one."
+msgstr ""
+"<strong>Ошибка</strong>: Данный адрес электронной почты уже зарегистрированы,"
+" пожалуйста, выберите другой."
+
+msgid ""
+"<strong>ERROR</strong>: This username is already registered, please choose "
+"another one."
+msgstr ""
+"<strong>Ошибка</strong>: Это имя пользователя уже зарегистрировано, "
+"пожалуйста, выберите другое имя."
+
+msgid ""
+"<strong>ERROR</strong>: This username is invalid because it uses illegal "
+"characters. Please enter a valid username."
+msgstr ""
+"<strong>Ошибка</strong>: Это имя пользователя является недействительным , "
+"поскольку он использует недопустимые символы. Пожалуйста введите корректрное "
+"имя пользователя."
+
+msgid "<strong>ERROR</strong>: Unable to reach the reCAPTCHA server."
+msgstr "<strong>Ошибка</strong>: Не удалось получить доступ к серверу ReCaptcha ."
+
+#, c-format
+msgid ""
+"<strong>ERROR</strong>: You have not yet confirmed your e-mail address. <a "
+"href=\"%s\">Resend activation</a>?"
+msgstr ""
+"<strong>Ошибка</strong>: Вы пока не подтвердили ваш адрес электронной почты. "
+"<a href=\"%s\">Код активации</a>?"
+
+msgid ""
+"<strong>ERROR</strong>: Your password must be at least 6 characters in "
+"length."
+msgstr "<strong>Ошибка</strong>: Ваш пароль должен быть не менее 6 символов."
+
+msgid "<strong>ERROR</strong>: Your registration has not yet been approved."
+msgstr "<strong>Ошибка</strong>: Ваша регистрация не подтверждена"
+
+msgid ""
+"<strong>You have successfully updated WordPress!</strong> Please log back in "
+"to experience the awesomeness."
+msgstr ""
+"<strong>Вы успешно обновили WordPress ! </strong> Пожалуйста, войдите , "
+"чтобы испытать новые возможности."
+
+msgid "A login form for your blog."
+msgstr "Форма входа для вашего блога."
+
+msgid "A password will be e-mailed to you."
+msgstr "Пароль будет выслан вам на адрес электронной почты."
+
+msgid "About Yourself"
+msgstr "Поменять пароль"
+
+msgid "Activate"
+msgstr "Активация"
+
+msgid "Activation Key Required"
+msgstr "Обязателен ключ активации"
+
+msgid "Activation Key:"
+msgstr "Ключ активации:"
+
+msgid "Activation sent."
+msgstr "Активация осуществлена."
+
+msgid "Add Link"
+msgstr "Добавить ссылку"
+
+msgid "Admin Approval"
+msgstr "Одобрение администратором"
+
+#, c-format
+msgid ""
+"After %1$s failed login attempts within %2$s %3$s, lockout the account for "
+"%4$s %5$s."
+msgstr ""
+"После %1$s неудачных попыток входа за %2$s %3$s ,учётная запись будет "
+"блокирована на %4$s %5$s."
+
+msgid "Allow search engines to index this site."
+msgstr "Разрешить поисковым системам индексировать этот сайт."
+
+msgid "Allows users to login using their e-mail address in place of their username."
+msgstr ""
+"Разрешает пользователям входить на сайт, используя вместо логинов e-mail-"
+"адреса."
+
+msgid "An error occurred during the activation"
+msgstr "Произошла ошибка во время активации"
+
+msgid "Approve"
+msgstr "Утвердить"
+
+msgid "Available Variables"
+msgstr "Доступные переменные"
+
+msgid "Biographical Info"
+msgstr "Биографическая информация"
+
+msgid ""
+"But, before you can start using your new username, <strong>you must activate "
+"it</strong>."
+msgstr ""
+"Прежде чем использовать вашу учётную запись, <strong>вы должны активировать "
+"её</strong>."
+
+msgid ""
+"But, before you can start using your site, <strong>you must activate "
+"it</strong>."
+msgstr "Для входа на сайт <strong>вы должны быть авторизованы</strong>."
+
+msgid ""
+"Check the junk or spam folder of your email client. Sometime emails wind up "
+"there by mistake."
+msgstr ""
+"Проверьте спам папку вашего почтового клиента. Возможно, что письмо попало "
+"туда по ошибке."
+
+msgid ""
+"Check this option to require new users to be approved by an administrator "
+"before they may log in."
+msgstr ""
+"Выбрите данный вариант, чтобы пользователей вначале должен был одобрить "
+"администратор."
+
+msgid ""
+"Check this option to require new users to confirm their e-mail address "
+"before they may log in."
+msgstr ""
+"Выберите данный вариант, чтобы пользователям  требовалось вначале "
+"подтвердить свой адрес электронной почты."
+
+msgid "Check this option to require no moderation."
+msgstr "Выберите эту опцию, если не используете модерацию."
+
+msgid ""
+"Check this option to send the user back to the page they were visiting "
+"before logging in."
+msgstr ""
+"Выберите эту опцию, чтобы пользователь вернулся на ту же страницу, с которой "
+"он залогинился."
+
+msgid ""
+"Check this option to send the user back to the page they were visiting "
+"before logging out. (Note: If the previous page being visited was an admin "
+"page, this can have unexpected results.)"
+msgstr ""
+"Выберите эту опцию, чтобы отправить пользователя на страницу, которую они "
+"посещали перед выходом . (Примечание: Если предыдущая страница, которую "
+"посетил пользователь, была страница администратора , это может привести к "
+"неожиданным результатам . )"
+
+msgid ""
+"Check this option to send the user to a custom location, specified by the "
+"textbox above."
+msgstr ""
+"Выберите эту опцию для того, чтобы открыть пользователю после входа другую "
+"страницу."
+
+msgid ""
+"Check this option to send the user to the log in page, displaying a message "
+"that they have successfully logged out."
+msgstr ""
+"Выберите эту опцию, чтобы отправить пользователя на страницу входа в систему "
+", на дисплее появится сообщение , что они успешно вышли ."
+
+msgid "Check this option to send the user to their WordPress Dashboard/Profile."
+msgstr ""
+"Выберите эту опцию, чтобы отправить пользователя в консоль WordPress/ "
+"Профиль ."
+
+msgid "Check your e-mail for the confirmation link."
+msgstr ""
+"Проверьте вашу электронную почту  на предмет ссылки для  подтверждения "
+"регистрации ."
+
+#, c-format
+msgid "Check your inbox at <strong>%1$s</strong> and click the link given."
+msgstr ""
+"Проверьте ваш почтовый ящик <strong>%1$s</strong> и перейдите по ссылке в "
+"письме"
+
+#, c-format
+msgid "Check your inbox at <strong>%s</strong> and click the link given."
+msgstr ""
+"Проверьте ваш почтовый ящик по адресу <strong>%s</strong> и перейдите по "
+"ссылке в письме."
+
+msgid "Confirm Password"
+msgstr "Подтвердите пароль"
+
+msgid "Confirm Password:"
+msgstr "Подтвердите пароль:"
+
+msgid "Confirm new password"
+msgstr "Подтвердите новый пароль"
+
+msgid "Confirm that you've typed your password correctly."
+msgstr "Убедитесь, что вы правильно ввели пароль ."
+
+#, c-format
+msgid "Congratulations! Your new site, %s, is almost ready."
+msgstr "Поздравляю! Ваш сайт , %s, почти готов."
+
+msgid "Contact Info"
+msgstr "Контактная информация"
+
+msgid "Create Site"
+msgstr "Сделать сайт"
+
+msgid "Dashboard"
+msgstr "Панель"
+
+msgid "Date"
+msgstr "Дата"
+
+msgid "Default"
+msgstr "По умолчанию"
+
+msgid "Default Action"
+msgstr "Действие по умолчанию"
+
+msgid "Delete"
+msgstr "Удалить"
+
+msgid "Disable <tt>wp-login.php</tt>"
+msgstr "Выключить стандартный вход через <tt>wp-login.php</tt>"
+
+msgid "Disable Admin Notification"
+msgstr "Отключить уведомление Администратора"
+
+msgid "Display name publicly as"
+msgstr "Показать на сайте как"
+
+msgid "E-mail"
+msgstr "E-mail"
+
+msgid "Enter your E-mail"
+msgstr "Для просмотра подтвердите свой е-mail"
+
+msgid "E-mail Confirmation"
+msgstr "Пдтверждение E-mail "
+
+msgid "E-mail Format"
+msgstr "Формат E-mail "
+
+msgid "E-mail Login"
+msgstr "Логин посредством e-mail"
+
+#, c-format
+msgid "E-mail: %s"
+msgstr "E-mail: %s"
+
+msgid "Email&nbsp;Address:"
+msgstr "Email&nbsp;Адрес:"
+
+msgid "Enable \"theme-my-login.css\""
+msgstr "Разрешить \"theme-my-login.css\""
+
+#, c-format
+msgid "Enable %s"
+msgstr "Включить %s"
+
+msgid "Enable e-mail address login"
+msgstr "Разрешить использовать адрес e-mail в качестве логина"
+
+msgid "Enter your new password below."
+msgstr "Введите новый пароль ниже."
+
+msgid "Failed Login Attempts"
+msgstr "Неудачные попытки входа"
+
+msgid "First Name"
+msgstr "Имя"
+
+msgid ""
+"For your security, your account has been locked because of too many failed "
+"login attempts. To unlock your account please click the following link: "
+msgstr ""
+"Для вашей безопасности  ваш аккаунт был заблокирован из-за слишком частых "
+"неудачных попыток входа в систему. Чтобы разблокировать учетную запись , "
+"пожалуйста, нажмите на следующую ссылку:"
+
+msgid "From E-mail"
+msgstr "Адрес электронной почты отправителя"
+
+msgid "From Name"
+msgstr "Имя отправителя"
+
+msgid "General"
+msgstr "Основные настройки"
+
+#, c-format
+msgid "Get <em>another</em> %s site in seconds"
+msgstr "Получить <em>другой </em> %s сайт за секунды"
+
+msgid "Get New Password"
+msgstr "Получить новый пароль"
+
+#, c-format
+msgid "Get your own %s account in seconds"
+msgstr "Получить аккаунт %s  в секунды"
+
+msgid "Gimme a site!"
+msgstr "Дай мне сайт !"
+
+msgid "Gravatar Size"
+msgstr "Размер Граватара"
+
+#, c-format
+msgid ""
+"Greetings Site Administrator! You are currently allowing &#8220;%s&#8221; "
+"registrations. To change or disable registration go to your <a "
+"href=\"%s\">Options page</a>."
+msgstr ""
+"Привет Администратор сайта ! Вы в настоящее время позволяет  &#8220;%s&#8221;"
+" registrations.Для отключения или изменения регистрации перейдите <a "
+"href=\"%s\">Options page</a>."
+
+msgid "HTML"
+msgstr "HTML"
+
+#, c-format
+msgid ""
+"Have you entered your email correctly?  You have entered %s, if it&#8217;s "
+"incorrect, you will not receive your email."
+msgstr ""
+"Введённый e-mail верен?  Вы ввели %s,если &#8217;sне верен, то вы не сможете "
+"получить письмо."
+
+msgid ""
+"Hint: The password should be at least seven characters long. To make it "
+"stronger, use upper and lower case letters, numbers and symbols like ! \" ? $ "
+"% ^ &amp; )."
+msgstr ""
+"Подсказка: Пароль должен быть длиной не менее семи символов .Чтобы сделать "
+"его более стойким, используйте верхний и нижний регистр букв, цифры и "
+"символов , как ! \" ? $ % ^ &amp; )."
+
+msgid "IP Address"
+msgstr "IP Address"
+
+msgid "If any field is left empty, the default will be used instead."
+msgstr ""
+"Если какое-либо поле оставить пустым, то будет использоваться значение по "
+"умолчанию."
+
+msgid "If this was a mistake, just ignore this email and nothing will happen."
+msgstr "ЕслиВы получили это письмо по ошибке, пожалуйста, проигнорируйте его ."
+
+msgid ""
+"If you do not activate your site within two days, you will have to sign up "
+"again."
+msgstr ""
+"Если вы не активируете вашу учётную запись в течение двух дней, вам придется "
+"зарегистрироваться еще раз ."
+
+msgid ""
+"If you do not activate your username within two days, you will have to sign "
+"up again."
+msgstr ""
+"Если вы не активируете свой логин в течение двух дней, вам придется "
+"зарегистрироваться еще раз ."
+
+msgid ""
+"If you haven&#8217;t received your email yet, there are a number of things "
+"you can do:"
+msgstr ""
+"Если Вы до сих пор не получили положенное письмо на &#8217, Вы можете "
+"попробовать сделать следующие вещи:"
+
+msgid ""
+"If you would like to change the password type a new one. Otherwise leave "
+"this blank."
+msgstr ""
+"Если вы хотели бы изменить пароль введите новый. В противном случае оставьте "
+"это поле пустым ."
+
+msgid ""
+"If you&#8217;re not going to use a great site domain, leave it for a new "
+"user. Now have at it!"
+msgstr ""
+"Если вы&#8217; не собираетесь использовать большое домен сайта , оставьте "
+"его для нового пользователя ."
+
+msgid ""
+"In order to keep changes between upgrades, you can store your customized "
+"\"theme-my-login.css\" in your current theme directory."
+msgstr ""
+"Чтобы сохранить изменения при обновлении плагина, Вы можете хранить "
+"настроенный Вами \"theme-my-login.css\" в директории текущей темы."
+
+msgid "Invalid key"
+msgstr "Неправильный ключ"
+
+msgid "Jeff Farthing"
+msgstr "Джеф Фартинг"
+
+msgid "Just a username, please."
+msgstr "Только имя пользователя."
+
+msgid "Last Name"
+msgstr "Фамилия"
+
+msgid "Lock"
+msgstr "Заблокировать"
+
+msgid "Log In"
+msgstr "Вход"
+
+msgid "Log Out"
+msgstr "Выход"
+
+msgid "Log in"
+msgstr "Вход"
+
+msgid "Log out"
+msgstr "Выйти"
+
+msgid "Login"
+msgstr "Вход"
+
+msgid "Login Attempts"
+msgstr "Попытка входа"
+
+msgid "Lost Password"
+msgstr "Старый пароль"
+
+msgid "Message"
+msgstr "Сообщение"
+
+msgid "Moderation"
+msgstr "Модерация"
+
+msgid "Moderation Type"
+msgstr "Тип модерации"
+
+msgid "Modules"
+msgstr "Модули"
+
+msgctxt "Multisite active signup type"
+msgid "all"
+msgstr "Всё"
+
+msgctxt "Multisite active signup type"
+msgid "blog"
+msgstr "блог"
+
+msgctxt "Multisite active signup type"
+msgid "none"
+msgstr "Ничего"
+
+msgctxt "Multisite active signup type"
+msgid "user"
+msgstr "пользователь"
+
+msgid ""
+"Must be at least 4 characters, letters and numbers only. It cannot be "
+"changed, so choose carefully!"
+msgstr ""
+"Должно быть не менее 4 символов , только буквы и цифры . Не может быть "
+"изменено , так что выбирайте тщательно !"
+
+msgid "Name"
+msgstr "Имя"
+
+msgid "New Password"
+msgstr "Новый пароль"
+
+msgid "New User"
+msgstr "Новый пользователь"
+
+msgid "New User Admin"
+msgstr "Новый пользователь администратор"
+
+msgid "New password"
+msgstr "Новый пароль"
+
+#, c-format
+msgid "New user registration on your site %s:"
+msgstr "Регистрация нового пользователя на вашем сайте  %s:"
+
+#, c-format
+msgid "New user requires approval on your blog %s:"
+msgstr "Регистрация нового пользователя требует одобрения %s:"
+
+msgid "Next"
+msgstr "Дальше"
+
+msgid "Nickname"
+msgstr "Ник "
+
+msgid "No"
+msgstr "Нет"
+
+msgid "None"
+msgstr "Ни один"
+
+msgid "Password"
+msgstr "Пароль"
+
+#, c-format
+msgid "Password Lost and Changed for user: %s"
+msgstr "Утерян или изменён пароль для пользователей :% S"
+
+msgid "Password reset is not allowed for this user"
+msgstr "Восстановление пароля не допускается для этого пользователя"
+
+msgid "Password:"
+msgstr "Пароль:"
+
+#, c-format
+msgid "Password: %s"
+msgstr "Пароль: %s"
+
+msgid "Personal Options"
+msgstr "Персональная информация"
+
+msgid "Plain Text"
+msgstr "Просто текст"
+
+#, c-format
+msgid ""
+"Please be sure to include the variable %activateurl% or else the user will "
+"not be able to activate their account!"
+msgstr ""
+"Пожалуйста, не забудьте включить переменную % activateurl % иначе "
+"пользователь не сможет активировать свою учетную запись !"
+
+#, c-format
+msgid ""
+"Please be sure to include the variable %reseturl% or else the user will not "
+"be able to recover their password!"
+msgstr ""
+"Пожалуйста, не забудьте включить переменную % reseturl % иначе пользователь "
+"не сможет восстановить свой пароль !"
+
+#, c-format
+msgid ""
+"Please be sure to include the variable %user_pass% if using default "
+"passwords or else the user will not know their password!"
+msgstr ""
+"Пожалуйста, не забудьте включить переменную %user_pass% при использовании "
+"пароля по умолчанию или иначе пользователь не получит свой пароль !"
+
+msgid ""
+"Please enter your username or email address. You will receive a link to "
+"create a new password via email."
+msgstr ""
+"Пожалуйста, введите ваш логин или адрес электронной почты. Вы получите "
+"ссылку по электронной почте, чтобы создать новый пароль."
+
+msgid "Please log in to continue."
+msgstr "Пожалуйста, войдите , чтобы продолжить."
+
+msgid "Possible reason: your host may have disabled the mail() function..."
+msgstr "Возможная причина:отключена почта () ..."
+
+msgid "Privacy:"
+msgstr "Конфиденциальность:"
+
+msgid "Private Key"
+msgstr "Секретный частный ключ"
+
+msgid "Private Login"
+msgstr "Стандартный вход Wordpress"
+
+msgid "Private Site"
+msgstr "Сайт только для зарегистрированных пользователей"
+
+msgid "Profile"
+msgstr "Профиль"
+
+msgid "Profile updated."
+msgstr "Профиль обновлен."
+
+msgid "Public Key"
+msgstr "Публичный ключ"
+
+msgid "Redirection"
+msgstr "Перенаправление"
+
+msgid "Referer"
+msgstr "Страница входа"
+
+msgid "Register"
+msgstr "Регистрация"
+
+msgid "Register For This Site"
+msgstr "Зарегистрироваться на этом сайте"
+
+msgid "Registration complete. Please check your e-mail."
+msgstr "Регистрация завершена. Пожалуйста, проверьте свою электронную почту."
+
+msgid "Registration complete. You may now log in."
+msgstr "Регистрация завершена. Теперь Вы можете войти ."
+
+msgid "Registration has been disabled."
+msgstr "Регистрация отключена."
+
+msgid "Remember Me"
+msgstr "Запомнить меня"
+
+msgid "Require users to be logged in to view site"
+msgstr "Требовать от пользователей входа в систему , чтобы попасть на сайт"
+
+msgid "Resend Activation"
+msgstr "Активировать снова"
+
+msgid "Reset Password"
+msgstr "Сброс пароля"
+
+msgid "Restrict Admin Access"
+msgstr "Ограничить доступ с правами администратора"
+
+msgid "Retrieve Password"
+msgstr "Напомнить пароль"
+
+msgid "Security"
+msgstr "Безопасность"
+
+msgid ""
+"Share a little biographical information to fill out your profile. This may "
+"be shown publicly."
+msgstr "Расскажите немного о себе. Эта информация может отображаться на сайте."
+
+msgid "Show Gravatar"
+msgstr "Показать Граватар"
+
+msgid "Show Login Link"
+msgstr "Показать Войти Ссылка"
+
+msgid "Show Lost Password Link"
+msgstr "Показать ссылку на восстановление пароля"
+
+msgid "Show Register Link"
+msgstr "Показать ссылку на регистрацию"
+
+msgid "Show Title"
+msgstr "Показать Название"
+
+msgid "Show Toolbar when viewing site"
+msgstr "Показать панель инструментов при просмотре сайта"
+
+msgid "Show When Logged In"
+msgstr "Показать после входа в систему"
+
+msgid "Show When Logged Out"
+msgstr "Показать выйти из системы"
+
+msgid "Signup"
+msgstr "Зарегистрироваться"
+
+msgid "Site Domain:"
+msgstr "Доменное имя сайта:"
+
+msgid "Site Name:"
+msgstr "Название сайта:"
+
+msgid "Site Title:"
+msgstr "Название сайта :"
+
+msgid "Site registration has been disabled."
+msgstr "Регистрация на сайте отключена ."
+
+msgid "Sites you are already a member of:"
+msgstr "Сайты, где вы уже зарегистрированы:"
+
+msgid "Someone requested that the password be reset for the following account:"
+msgstr "Вы или кто-то другой запросил пароль для данного аккаунта:"
+
+msgid "Sorry, new registrations are not allowed at this time."
+msgstr "Извините, регистрация новых пользователей закрыта."
+
+msgid "Sorry, that key does not appear to be valid."
+msgstr "Извините, этот ключ не допустим ."
+
+msgid "Still waiting for your email?"
+msgstr "Все еще жду вашей электронной почте ?"
+
+msgid "Strength indicator"
+msgstr "Индикатор сложности пароля"
+
+msgid "Stylesheet"
+msgstr "Таблица стилей"
+
+msgid "Subject"
+msgstr "Тема"
+
+msgid "TML"
+msgstr "TML"
+
+#, c-format
+msgid ""
+"Thanks for registering at %s! To complete the activation of your account "
+"please click the following link: "
+msgstr ""
+"Спасибо за регистрацию на %s! Для завершения активации вашей учетной записи ,"
+" пожалуйста, перейдите по следующей ссылке:"
+
+msgid ""
+"The activation e-mail has been sent to the e-mail address with which you "
+"registered. Please check your email and click on the link provided."
+msgstr ""
+"Активация электронной почты был отправлен на адрес электронной почты , "
+"который зарегистрирован . Пожалуйста, проверьте свою электронную почту и "
+"нажмите на ссылку в письме ."
+
+msgid "The e-mail could not be sent."
+msgstr "Письмо не может быть отправлено."
+
+msgid "The following attempts resulted in the lock:"
+msgstr "Последующие попытки привели к блокировке :"
+
+msgid "The passwords do not match."
+msgstr "Пароли не совпадают."
+
+#, c-format
+msgid "The site %s is yours."
+msgstr "Этот сайт %s ваш."
+
+msgid "Theme"
+msgstr "Тема"
+
+msgid "Theme My Login"
+msgstr "Настройки Theme My Login"
+
+msgid "Theme My Login Custom E-mail Settings"
+msgstr "Theme My Login пользовательские настройки электронной почты"
+
+msgid "Theme My Login Custom Redirection Settings"
+msgstr "Theme My Login Пользовательские настройки перенаправления"
+
+msgid "Theme My Login Custom User Links Settings"
+msgstr "Theme My Login Настройки переадресации пользователей"
+
+msgid "Theme My Login Security Settings"
+msgstr "Theme My Login Настройки безопасности"
+
+msgid "Theme My Login Settings"
+msgstr "Настройки Theme My Login"
+
+msgid "Theme My Login Themed Profiles Settings"
+msgstr "Выбор настроек профиля"
+
+msgid "Theme My Login User Moderation Settings"
+msgstr "Theme My Login User Настройки модерации"
+
+msgid "Theme My Login reCAPTCHA Settings"
+msgstr "Theme My Login настройки reCAPTCHA "
+
+msgid "Themed Profiles"
+msgstr "Профили темы"
+
+msgid ""
+"Themes the WordPress login, registration and forgot password pages according "
+"to your theme."
+msgstr ""
+"Панель  входа в WordPress, регистрации и восстановления пароля страницы в "
+"соответствии с вашей темой."
+
+msgid "There was a problem, please correct the form below and try again."
+msgstr "Ошибка , пожалуйста, проверьте форму ниже и попробуйте еще раз ."
+
+msgid ""
+"This e-mail will be sent to a new user upon admin approval when \"Admin "
+"Approval\" is checked for \"User Moderation\"."
+msgstr ""
+"Это письмо будет отправлено новому пользователю после одобрения "
+"администратором, когда в качестве параметра «Модерация пользователей» выбран "
+"вариант «Одобрение администратором»."
+
+msgid ""
+"This e-mail will be sent to a new user upon registration when \"E-mail "
+"Confirmation\" is checked for \"User Moderation\"."
+msgstr ""
+"Это письмо будет отправлено пользователю при регистрации , когда \"E-mail "
+"Confirmation\" is checked for \"User Moderation\"."
+
+msgid "This e-mail will be sent to a new user upon registration."
+msgstr "На этот адрес электронной почты будет произведена регистрация. "
+
+msgid ""
+"This e-mail will be sent to a user when they attempt to recover their "
+"password."
+msgstr ""
+"Это письмо будет отправлено пользователю, когда он воспользуется "
+"восстановлением  пароля."
+
+msgid ""
+"This e-mail will be sent to a user who is deleted/denied when \"Admin "
+"Approval\" is checked for \"User Moderation\" and the user's role is \"Pending\"."
+msgstr ""
+"Эта письмо будет отправлено пользователю , который удален / заблокирован , "
+"когда \"Одобрение администратора \" проверяется на  \" Модерация Пользователь \" "
+"и ролью пользователя является \" В ожидании \" ."
+
+msgid ""
+"This e-mail will be sent to the e-mail address or addresses (multiple "
+"addresses may be separated by commas) specified below upon user registration "
+"when \"Admin Approval\" is checked for \"User Moderation\"."
+msgstr ""
+"Это письмо будет отправлено   на адрес электронной почты или адреса ( "
+"адресов несколько, могут быть разделены запятыми ) , указанных ниже при "
+"регистрации пользователя при \" одобрении администратором \" проверяется на \" "
+"Модерация Пользователь \" ."
+
+msgid ""
+"This e-mail will be sent to the e-mail address or addresses (multiple "
+"addresses may be separated by commas) specified below, upon new user "
+"registration."
+msgstr ""
+"На этот адрес e-mail будет отправлен на адрес(а) электронной почты  (  "
+"несколько адресов  могут быть разделены запятыми ) , указанной ниже , на "
+"регистрацию нового пользователя."
+
+msgid ""
+"This e-mail will be sent to the e-mail address or addresses (multiple "
+"addresses may be separated by commas) specified below, upon user password "
+"change."
+msgstr ""
+"Это письмо будет отправлено пользователю на адрес или адреса электронной "
+"почты  ( несколько адресов должны разделяться запятыми ) , указанные ниже , "
+"в случае смены пароля пользователя ."
+
+msgid "Title"
+msgstr "Название"
+
+msgid "To"
+msgstr "Для"
+
+msgid "To approve or deny this user:"
+msgstr "Утвердить или отклонить этого пользователя:"
+
+msgid "To reset your password, visit the following address:"
+msgstr "Чтобы сбросить пароль , перейдите по ссылке :"
+
+msgid "Toolbar"
+msgstr "Панель инструментов"
+
+msgid "Type your new password again."
+msgstr "Введите новый пароль еще раз ."
+
+msgid "URL"
+msgstr "URL"
+
+msgid "Unlock"
+msgstr "Разблокировать"
+
+msgid "Update"
+msgstr "Обновить"
+
+msgid "Update Profile"
+msgstr "Обновить профиль"
+
+msgid "User Activation"
+msgstr "Активация пользователя"
+
+msgid "User Approval"
+msgstr "Пользователь активирован"
+
+msgid "User Approval Admin"
+msgstr "Пользователь Администратор активирован"
+
+msgid "User Denial"
+msgstr "Пользователь отказался"
+
+msgid "User Links"
+msgstr "Ссылки пользователя"
+
+msgid "User Moderation is not currently compatible with multisite."
+msgstr "Модерация пользователей в настоящее время не совместима с мультисайтом."
+
+msgid "User approved."
+msgstr "Пользователь подтверждён."
+
+msgid "User locked."
+msgstr "Пользователь заблокирован"
+
+msgid "User registration has been disabled."
+msgstr "Регистрация пользователя была отключена ."
+
+msgid "User registration is currently not allowed."
+msgstr "Восстановление пароля не допускается для этого пользователя"
+
+msgid "User unlocked."
+msgstr "Пользователь разблокирован."
+
+msgid "Username"
+msgstr "Имя пользователя (логин)"
+
+msgid "Username or E-mail:"
+msgstr "Имя пользователя или  E-mail:"
+
+msgid "Username:"
+msgstr "Имя пользователя (логин):"
+
+#, c-format
+msgid "Username: %s"
+msgstr "Пользователь: %s"
+
+msgid ""
+"Wait a little longer. Sometimes delivery of email can be delayed by "
+"processes outside of our control."
+msgstr "Попробуйте немного подождать. Иногда почта может немного задержаться."
+
+msgid ""
+"We send your registration email to this address. (Double-check your email "
+"address before continuing.)"
+msgstr ""
+"Мы пошлём письмо с регистрацией по этому адресу . ( Дважды проверьте Ваш "
+"электронный адрес , прежде чем продолжить . )"
+
+msgid "Website"
+msgstr "Сайт"
+
+#, c-format
+msgid ""
+"Welcome back, %s. By filling out the form below, you can <strong>add another "
+"site to your account</strong>. There is no limit to the number of sites you "
+"can have, so create to your heart&#8217;s content, but write responsibly!"
+msgstr ""
+"Добро пожаловать , %s. Заполнив форму ниже, вы можете <strong>добавить еще "
+"один сайт в свой аккаунт</strong>. Там нет ограничений на количество сайтов, "
+"но создавая &#8217;s контент, отнеситесь к нему ответственно!"
+
+#, c-format
+msgid "Welcome, %s"
+msgstr "Добро пожаловать, %s"
+
+msgid "Y/m/d"
+msgstr "Год/мес/день"
+
+msgid "Y/m/d g:i:s A"
+msgstr "Год/мес/день g:i:s A"
+
+msgid "Yes"
+msgstr "Да"
+
+msgid "You are logged in already. No need to register again!"
+msgstr "Вы уже вошли на сайт . Нет необходимости регистрироваться заново !"
+
+msgid "You are now logged out."
+msgstr "Вы вышли из системы."
+
+msgid "You can&#8217;t edit that user."
+msgstr "Вы можете &#8217;t редактировать этого пользователя."
+
+msgid "You do not have permission to edit this user."
+msgstr "Вы не имеете разрешения на изменение этого пользователя."
+
+#, c-format
+msgid "You have been approved access to %s"
+msgstr "Вам был одобрен доступ к  %s"
+
+#, c-format
+msgid "You have been denied access to %s"
+msgstr "Вам закрыт доступ к  %s"
+
+#, c-format
+msgid "You must first <a href=\"%s\">log in</a>, and then you can create a new site."
+msgstr ""
+"Вы должны сначала <a href=\"%s\">log in</a>, а затем вы можете создать новый "
+"сайт ."
+
+msgid "Your Profile"
+msgstr "Ваш профиль"
+
+msgid "Your account has been activated. Please check your e-mail for your password."
+msgstr ""
+"Ваша учетная запись была активирована. Пожалуйста, проверьте свою "
+"электронную почту для получения вашего пароля."
+
+#, c-format
+msgid ""
+"Your account has been activated. You may now <a href=\"%1$s\">login</a> to the "
+"site using your chosen username of &#8220;%2$s&#8221;.  Please check your "
+"email inbox at %3$s for your password and login instructions. If you do not "
+"receive an email, please check your junk or spam folder. If you still do not "
+"receive an email within an hour, you can <a href=\"%4$s\">reset your "
+"password</a>."
+msgstr ""
+"Ваша учетная запись была активирована. Теперь вы можете <a href=\"%1$s\">войти "
+"</a> на сайт, используя Ваше имя &#8220;%2$s&#8221;.  Проверьте ваш почтовый "
+"ящикt %3$s для получения пароля и  логина.  Если вы не получили письмо, "
+"пожалуйста, проверьте  папку со спамом . Если вы все еще не получите письмо "
+"в течение часа , вы можете <a href=\"%4$s\"> сбросить Ваш пароль </a>."
+
+msgid "Your account has been activated. You may now log in."
+msgstr "Ваша учетная запись была активирована. Теперь Вы можете войти ."
+
+msgid "Your account has been unlocked. You may now log in."
+msgstr "Ваша учетная запись была разблокирована. Теперь Вы можете войти ."
+
+#, c-format
+msgid ""
+"Your account is now activated. <a href=\"%1$s\">Login</a> or go back to the <a "
+"href=\"%2$s\">homepage</a>."
+msgstr ""
+"Ваш аккаунт активирован.  <a href=\"%1$s\">Login</a> or go back to the <a "
+"href=\"%2$s\">homepage</a>."
+
+#, c-format
+msgid ""
+"Your account is now activated. <a href=\"%1$s\">View your site</a> or <a "
+"href=\"%2$s\">Login</a>"
+msgstr ""
+"Ваш аккаунт активирован. <a href=\"%1$s\">View your site</a> or <a "
+"href=\"%2$s\">Login</a>"
+
+msgid "Your account is now active!"
+msgstr "Ваш аккаунт не активирован!"
+
+#, c-format
+msgid "Your address will be %s."
+msgstr "Ваш адрес должен быть  %s."
+
+msgid "Your password has been reset."
+msgstr "Ваш пароль был сброшен."
+
+msgid ""
+"Your registration was successful but you must now be approved by an "
+"administrator before you can log in. You will be notified by e-mail once "
+"your account has been reviewed."
+msgstr ""
+"Ваша регистрация прошла успешно, но теперь вы должны быть утверждены "
+"администратором до входа в систему . Вы будете уведомлены по электронной "
+"почте , как только ваш аккаунт был рассмотрен ."
+
+msgid ""
+"Your registration was successful but you must now confirm your email address "
+"before you can log in. Please check your email and click on the link "
+"provided."
+msgstr ""
+"Ваша регистрация прошла успешно, но теперь вы должны подтвердить свой адрес "
+"электронной почты , прежде чем вы можете войти . Пожалуйста, проверьте свою "
+"электронную почту и перейдите по ссылке  в письме ."
+
+msgid "Your session has expired. Please log-in again."
+msgstr "Время сеанса истекло . Пожалуйста, войдите в систему снова."
+
+#, c-format
+msgid ""
+"Your site at <a href=\"%1$s\">%2$s</a> is active. You may now log in to your "
+"site using your chosen username of &#8220;%3$s&#8221;.  Please check your "
+"email inbox at %4$s for your password and login instructions.  If you do not "
+"receive an email, please check your junk or spam folder.  If you still do "
+"not receive an email within an hour, you can <a href=\"%5$s\">reset your "
+"password</a>."
+msgstr ""
+"Ваш сайт <a href=\"%1$s\">%2$s</a> активен. Теперь вы можете войти, используя "
+"ваше имя &#8220;%3$s&#8221;.  Проверьте, пожалуйста, ваш почтовый ящик %4$s "
+"для получения пароля и логина. Если вы не получили письмо, пожалуйста, "
+"проверьте  папку со спамом . Если вы все еще не получите письмо в течение "
+"часа , вы можете  <a href=\"%5$s\">сбросить Ваш пароль</a>."
+
+msgid "Your username cannot be changed."
+msgstr "Ваше имя пользователя не может быть изменено."
+
+#, c-format
+msgid "[%s] Account Locked"
+msgstr "[%s] Аккаунт заблокирован"
+
+#, c-format
+msgid "[%s] Activate Your Account"
+msgstr "[%s] активировал ваш аккаунт"
+
+#, c-format
+msgid "[%s] New User Awaiting Approval"
+msgstr "[%s] Новый пользователь ожидает одобрения"
+
+#, c-format
+msgid "[%s] New User Registration"
+msgstr "[%s] Регистрация нового пользователя"
+
+#, c-format
+msgid "[%s] Password Lost/Changed"
+msgstr "[%s] Пароль забыли/Изменили"
+
+#, c-format
+msgid "[%s] Password Reset"
+msgstr "[%s] Сброс пароля"
+
+#, c-format
+msgid "[%s] Registration Approved"
+msgstr "[%s] Регистрация подтверждена"
+
+#, c-format
+msgid "[%s] Registration Denied"
+msgstr "[%s] В регистрации отказано"
+
+#, c-format
+msgid "[%s] Your username and password"
+msgstr "[%s] Ваше имя пользователя и пароль"
+
+msgid "day(s)"
+msgstr "day(s)"
+
+msgid "domain"
+msgstr "домен"
+
+msgid "hour(s)"
+msgstr "hour(s)"
+
+msgid "http://www.jfarthing.com"
+msgstr "http://www.jfarthing.com"
+
+msgid "http://www.jfarthing.com/extend/wordpress-plugins/theme-my-login/"
+msgstr "http://www.jfarthing.com/extend/wordpress-plugins/theme-my-login/"
+
+msgid "minute(s)"
+msgstr "minute(s)"
+
+msgid "reCAPTCHA"
+msgstr "reCAPTCHA"
+
+msgctxt "recaptcha theme"
+msgid "Black Glass"
+msgstr "Чёрное стекло"
+
+msgctxt "recaptcha theme"
+msgid "Clean"
+msgstr "Чистый"
+
+msgctxt "recaptcha theme"
+msgid "Red (Default)"
+msgstr "Красный (Default)"
+
+msgctxt "recaptcha theme"
+msgid "White"
+msgstr "Белый"
+
+msgid "sitename"
+msgstr "название сайта"
