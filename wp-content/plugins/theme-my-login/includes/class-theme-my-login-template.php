@@ -297,19 +297,19 @@ class Theme_My_Login_Template extends Theme_My_Login_Abstract {
 		$action_links = array();
 		if ( $args['login'] && $this->get_option( 'show_log_link' ) ) {
 			$action_links[] = array(
-				'title' => $this->get_title( 'login' ),
+				'title' => 'Войти', $this->get_title( 'login' ),
 				'url'   => $this->get_action_url( 'login' )
 			);
 		}
 		if ( $args['register'] && $this->get_option( 'show_reg_link' ) && get_option( 'users_can_register' ) ) {
 			$action_links[] = array(
-				'title' => $this->get_title( 'register' ),
+				'title' => 'Регистрация', //$this->get_title( 'register' ),
 				'url'   => $this->get_action_url( 'register' )
 			);
 		}
 		if ( $args['lostpassword'] && $this->get_option( 'show_pass_link' ) ) {
 			$action_links[] = array(
-				'title' => $this->get_title( 'lostpassword' ),
+				'title' => 'Забыли пароль?', //$this->get_title( 'lostpassword' ),
 				'url'   => $this->get_action_url( 'lostpassword' )
 			);
 		}

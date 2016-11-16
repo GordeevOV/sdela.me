@@ -60,7 +60,7 @@
 		<div class="col-md-2 dmbs-header-text registration">
 			<img src="<?php echo get_template_directory_uri();?>/img/logo2.jpg" alt="" />
 			<div>
-				<a href="#">Вход</a>
+				<a href="javascript:LPopupShow();">Вход</a>
 				<a href="javascript:PopupShow();">Регистрация</a>
 			</div>
 		</div>

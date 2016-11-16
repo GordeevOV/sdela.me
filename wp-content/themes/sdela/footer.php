@@ -86,6 +86,19 @@
     </div>
 </div>
 
+<!--Всплывающее окно логина-->
+
+<div class="l-popup">
+    <div class="l-popup-content">
+    	<h3>Добро пожаловать.</h3>
+        <?php  dynamic_sidebar( 'login-popup' ); ?>
+        <div class="close-l-popup">
+        	<!--<img src="<?php echo get_template_directory_uri();?>/img/cross.png" />-->
+        	<i class="fa fa-times"></i>
+    	</div>
+    </div>
+</div>
+
 <script>
 	function PopupShow() {
 		jQuery('.b-popup').show();
@@ -99,8 +112,24 @@
 		jQuery('.close-popup').hide();
 	}
 	
+	function LPopupShow() {
+		jQuery('.l-popup').show();
+		jQuery('.l-popup-content').show();
+		jQuery('.close-l-popup').show();
+	}
+	
+	function LPopupHide() {
+		jQuery('.l-popup').hide();
+		jQuery('.l-popup-content').hide();
+		jQuery('.close-l-popup').hide();
+	}
+	
 	jQuery('.close-popup').click(function(){
 		PopupHide();
+	});
+	
+	jQuery('.close-l-popup').click(function(){
+		LPopupHide();
 	});
 </script>
 
