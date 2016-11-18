@@ -72,7 +72,7 @@
 <!--Всплывающее окно регистрации-->
 
 <div class="b-popup">
-    <div class="b-popup-content">
+    <div class="b-popup-content" id="popup">
     	<h3>Добро пожаловать.</h3>
     	<p>Все данные доступны только зарегистрированым пользователям.</p>
     	<p>Попробуйте бесплатно в течение 14 дней. Без риска и кредитных карт.</p>
@@ -89,7 +89,7 @@
 <!--Всплывающее окно логина-->
 
 <div class="l-popup">
-    <div class="l-popup-content">
+    <div class="l-popup-content" id="l-popup">
     	<h3>Добро пожаловать.</h3>
         <?php  dynamic_sidebar( 'login-popup' ); ?>
         <div class="close-l-popup">
@@ -131,6 +131,24 @@
 	jQuery('.close-l-popup').click(function(){
 		LPopupHide();
 	});
+	
+	jQuery(function($){
+	$(document).mouseup(function (e){ // событие клика по веб-документу
+		var div = $("#popup"); // тут указываем ID элемента
+		var div2 = $("#l-popup");
+		if (!div.is(e.target) // если клик был не по нашему блоку
+		    && div.has(e.target).length === 0) { // и не по его дочерним элементам
+			PopupHide(); // скрываем его
+		}
+		if (!div2.is(e.target) // если клик был не по нашему блоку
+		    && div2.has(e.target).length === 0) { // и не по его дочерним элементам
+			LPopupHide(); // скрываем его
+		}
+	});
+});
+	
+	
+	
 </script>
 
 </body>
