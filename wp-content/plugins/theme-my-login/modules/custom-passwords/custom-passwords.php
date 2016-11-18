@@ -69,10 +69,12 @@ class Theme_My_Login_Custom_Passwords extends Theme_My_Login_Abstract {
 			<!--<label for="pass1<?php $template->the_instance(); ?>"><?php _e( 'Password', 'theme-my-login' ); ?></label>-->
 			<input autocomplete="off" name="pass1" id="pass1<?php $template->the_instance(); ?>" class="input" size="20" value="" type="password" placeholder="<?php _e( 'Придумайте пароль минимум 8 знаков', 'theme-my-login' ); ?>" />
 		</p>
+		<p class="errormsg" id="short_passw"></p>
 		<p class="tml-user-pass2-wrap">
 			<!--<label for="pass2<?php $template->the_instance(); ?>"><?php _e( 'Confirm Password', 'theme-my-login' ); ?></label>-->
 			<input autocomplete="off" name="pass2" id="pass2<?php $template->the_instance(); ?>" class="input" size="20" value="" type="password" placeholder="<?php _e( 'Подтвердите свой пароль', 'theme-my-login' ); ?>" />
 		</p>
+		<p class="errormsg" id="wrong_passw"></p>
 		<?php
 	}
 

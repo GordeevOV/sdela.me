@@ -344,6 +344,12 @@ body {
 	text-align: center;
 }
 
+.b-popup-content p.errormsg {
+	color: #ff0000;
+	/*margin-top: -20px;*/
+    font-size: 14px;
+}
+
 /*--------всплывающее окно логина------------*/
 .l-popup{
 	display: none;
