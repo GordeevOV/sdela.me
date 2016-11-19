@@ -60,8 +60,16 @@
 		<div class="col-md-2 dmbs-header-text registration">
 			<img src="<?php echo get_template_directory_uri();?>/img/logo2.jpg" alt="" />
 			<div>
+			<?php if ( is_user_logged_in() ) {
+			?>
+				<a href="/your-profile/">Профиль</a>
+				<a href="/logout/">Выйти</a>
+			<?php }
+				else {?>
 				<a href="javascript:LPopupShow();">Вход</a>
-				<a href="javascript:PopupShow();">Регистрация</a>
+				<a href="javascript:PopupShow();">Регистрация</a>	
+			<?php	}
+			?>
 			</div>
 		</div>
 
