@@ -70,6 +70,7 @@
 <?php wp_footer(); ?>
 
 <!--Всплывающее окно регистрации-->
+<?php if ( !is_user_logged_in() ) {?>
 
 <div class="b-popup">
     <div class="b-popup-content" id="popup">
@@ -150,6 +151,6 @@
 	
 	
 </script>
-
+<?php } ?>
 </body>
 </html>

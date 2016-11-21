@@ -86,11 +86,11 @@ function my_user_contactmethods($user_contactmethods)
 //Добавляем раздел в профиль пользователя
 
 ### дополнительные данные на странице профиля
-add_action('show_user_profile', 'my_profile_new_fields_add');
-add_action('edit_user_profile', 'my_profile_new_fields_add');
+//add_action('show_user_profile', 'my_profile_new_fields_add');
+//add_action('edit_user_profile', 'my_profile_new_fields_add');
 
-add_action('personal_options_update', 'my_profile_new_fields_update');
-add_action('edit_user_profile_update', 'my_profile_new_fields_update');
+//add_action('personal_options_update', 'my_profile_new_fields_update');
+//add_action('edit_user_profile_update', 'my_profile_new_fields_update');
 
 function my_profile_new_fields_add(){ 
 	global $user_ID;
