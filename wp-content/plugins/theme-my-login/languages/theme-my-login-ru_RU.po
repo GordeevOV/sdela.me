@@ -408,6 +408,9 @@ msgstr "Неудачные попытки входа"
 msgid "First Name"
 msgstr "Имя"
 
+msgid "First Name and Middlename"
+msgstr "Имя и Отчество"
+
 msgid ""
 "For your security, your account has been locked because of too many failed "
 "login attempts. To unlock your account please click the following link: "

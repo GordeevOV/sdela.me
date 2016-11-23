@@ -8,6 +8,12 @@ Theme My Login will always look in your theme's directory first, before using th
 	<?php $template->the_action_template_message( 'profile' ); ?>
 	<?php $template->the_errors(); ?>
 	<form id="your-profile" action="<?php $template->the_action_url( 'profile', 'login_post' ); ?>" method="post" enctype=”multipart/form-data”>
+	
+<div class="row">
+	
+	<div class="col-md-3 col-sm-12"> 
+	
+	
 		<?php wp_nonce_field( 'update-user_' . $current_user->ID ); ?>
 		<p>
 			<input type="hidden" name="from" value="profile" />
@@ -29,38 +35,43 @@ Theme My Login will always look in your theme's directory first, before using th
 		</table>
 
 		<?php do_action( 'profile_personal_options', $profileuser ); ?>
+	</div>
+	
+	<div class="col-md-9 col-sm-12">
+		<!--<h3><?php _e( 'Name', 'theme-my-login' ); ?></h3>-->
 
-		<h3><?php _e( 'Name', 'theme-my-login' ); ?></h3>
-
-		<table class="tml-form-table">
-		<tr class="tml-user-login-wrap">
+		<table class="tml-form-table profile-table">
+		<!--<tr class="tml-user-login-wrap">
 			<th><label for="user_login"><?php _e( 'Username', 'theme-my-login' ); ?></label></th>
 			<td><input type="text" name="user_login" id="user_login" value="<?php echo esc_attr( $profileuser->user_login ); ?>" disabled="disabled" class="regular-text" /> <span class="description"><?php _e( 'Usernames cannot be changed.', 'theme-my-login' ); ?></span></td>
+		</tr>-->
+		<input type="hidden" name="user_login" id="user_login" value="<?php echo esc_attr( $profileuser->user_login ); ?>" disabled="disabled" class="regular-text" />
+		
+		<tr class="tml-last-name-wrap">
+			<td class="first"><label for="last_name"><?php _e( 'Last Name', 'theme-my-login' ); ?></label></td>
+			<td class="last"><input type="text" name="last_name" id="last_name" value="<?php echo esc_attr( $profileuser->last_name ); ?>" class="regular-text" /></td>
 		</tr>
 
 		<tr class="tml-first-name-wrap">
-			<th><label for="first_name"><?php _e( 'First Name', 'theme-my-login' ); ?></label></th>
-			<td><input type="text" name="first_name" id="first_name" value="<?php echo esc_attr( $profileuser->first_name ); ?>" class="regular-text" /></td>
+			<td class="first"><label for="first_name"><?php _e( 'Имя и Отчество', 'theme-my-login' ); ?></label></td>
+			<td class="last"><input type="text" name="first_name" id="first_name" value="<?php echo esc_attr( $profileuser->first_name ); ?>" class="regular-text" /></td>
 		</tr>
 
-		<tr class="tml-last-name-wrap">
-			<th><label for="last_name"><?php _e( 'Last Name', 'theme-my-login' ); ?></label></th>
-			<td><input type="text" name="last_name" id="last_name" value="<?php echo esc_attr( $profileuser->last_name ); ?>" class="regular-text" /></td>
-		</tr>
-
-		<tr class="tml-nickname-wrap">
-			<th><label for="nickname"><?php _e( 'Nickname', 'theme-my-login' ); ?> <span class="description"><?php _e( '(required)', 'theme-my-login' ); ?></span></label></th>
+		<!--<tr class="tml-nickname-wrap">
+			<td><label for="nickname"><?php _e( 'Nickname', 'theme-my-login' ); ?> <span class="description"><?php _e( '(required)', 'theme-my-login' ); ?></span></label></td>
 			<td><input type="text" name="nickname" id="nickname" value="<?php echo esc_attr( $profileuser->nickname ); ?>" class="regular-text" /></td>
-		</tr>
+		</tr>-->
+		<input type="hidden" name="nickname" id="nickname" value="<?php echo esc_attr( $profileuser->nickname ); ?>" class="regular-text" />
+		
 
 		<tr class="tml-display-name-wrap">
-			<th><label for="display_name"><?php _e( 'Display name publicly as', 'theme-my-login' ); ?></label></th>
-			<td>
+			<td class="first"><label for="display_name"><?php _e( 'Display name publicly as', 'theme-my-login' ); ?></label></td>
+			<td class="last">
 				<select name="display_name" id="display_name">
 				<?php
 					$public_display = array();
-					$public_display['display_nickname']  = $profileuser->nickname;
-					$public_display['display_username']  = $profileuser->user_login;
+					//$public_display['display_nickname']  = $profileuser->nickname;
+					//$public_display['display_username']  = $profileuser->user_login;
 
 					if ( ! empty( $profileuser->first_name ) )
 						$public_display['display_firstname'] = $profileuser->first_name;
@@ -73,8 +84,8 @@ Theme My Login will always look in your theme's directory first, before using th
 						$public_display['display_lastfirst'] = $profileuser->last_name . ' ' . $profileuser->first_name;
 					}
 
-					if ( ! in_array( $profileuser->display_name, $public_display ) )// Only add this if it isn't duplicated elsewhere
-						$public_display = array( 'display_displayname' => $profileuser->display_name ) + $public_display;
+					//if ( ! in_array( $profileuser->display_name, $public_display ) )// Only add this if it isn't duplicated elsewhere
+					//	$public_display = array( 'display_displayname' => $profileuser->display_name ) + $public_display;
 
 					$public_display = array_map( 'trim', $public_display );
 					$public_display = array_unique( $public_display );
@@ -88,14 +99,10 @@ Theme My Login will always look in your theme's directory first, before using th
 				</select>
 			</td>
 		</tr>
-		</table>
 
-		<h3><?php _e( 'Contact Info', 'theme-my-login' ); ?></h3>
-
-		<table class="tml-form-table">
 		<tr class="tml-user-email-wrap">
-			<th><label for="email"><?php _e( 'E-mail', 'theme-my-login' ); ?> <span class="description"><?php _e( '(required)', 'theme-my-login' ); ?></span></label></th>
-			<td><input type="text" name="email" id="email" value="<?php echo esc_attr( $profileuser->user_email ); ?>" class="regular-text" /></td>
+			<td class="first"><label for="email"><?php _e( 'E-mail ', 'theme-my-login' ); ?> <span class="description"><?php _e( '(required)', 'theme-my-login' ); ?></span></label></td>
+			<td class="last"><input type="text" name="email" id="email" value="<?php echo esc_attr( $profileuser->user_email ); ?>" class="regular-text" /></td>
 			<?php
 			$new_email = get_option( $current_user->ID . '_new_email' );
 			if ( $new_email && $new_email['newemail'] != $current_user->user_email ) : ?>
@@ -111,29 +118,42 @@ Theme My Login will always look in your theme's directory first, before using th
 		</tr>
 
 		<tr class="tml-user-url-wrap">
-			<th><label for="url"><?php _e( 'Website', 'theme-my-login' ); ?></label></th>
-			<td><input type="text" name="url" id="url" value="<?php echo esc_attr( $profileuser->user_url ); ?>" class="regular-text code" /></td>
+			<td class="first"><label for="url"><?php _e( 'Website', 'theme-my-login' ); ?></label></td>
+			<td class="last"><input type="text" name="url" id="url" value="<?php echo esc_attr( $profileuser->user_url ); ?>" class="regular-text code" /></td>
 		</tr>
 
 		<?php
 			foreach ( wp_get_user_contact_methods() as $name => $desc ) {
+			
+			if ($name == 'birthdate') {
+				echo "<tr><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td></tr>";
+			}
+			
+			if ($name == 'facebook') {
+				echo "<tr><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td></tr>";
+				echo "<tr><td><label>Мои профили в социальных сетях</label></td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td></tr>";
+			}
+		
 		?>
+		
+		
 		<tr class="tml-user-contact-method-<?php echo $name; ?>-wrap">
-			<th><label for="<?php echo $name; ?>"><?php echo apply_filters( 'user_'.$name.'_label', $desc ); ?></label></th>
-			<td><input type="text" name="<?php echo $name; ?>" id="<?php echo $name; ?>" value="<?php echo esc_attr( $profileuser->$name ); ?>" class="regular-text" /></td>
+			<td class="first"><label for="<?php echo $name; ?>"><?php echo apply_filters( 'user_'.$name.'_label', $desc ); ?></label></td>
+			<td class="last"><input type="text" name="<?php echo $name; ?>" id="<?php echo $name; ?>" value="<?php echo esc_attr( $profileuser->$name ); ?>" class="regular-text" /></td>
 		</tr>
 		<?php
 			}
 		?>
 		</table>
+		<br /><br />
+		<!--<h3><?php _e( 'About Yourself', 'theme-my-login' ); ?></h3>-->
 
-		<h3><?php _e( 'About Yourself', 'theme-my-login' ); ?></h3>
-
-		<table class="tml-form-table">
+		<table class="tml-form-table profile-table">
 		<tr class="tml-user-description-wrap">
-			<th><label for="description"><?php _e( 'Biographical Info', 'theme-my-login' ); ?></label></th>
-			<td><textarea name="description" id="description" rows="5" cols="30"><?php echo esc_html( $profileuser->description ); ?></textarea><br />
-			<span class="description"><?php _e( 'Share a little biographical information to fill out your profile. This may be shown publicly.', 'theme-my-login' ); ?></span></td>
+			<!--<th><label for="description"><?php _e( 'Biographical Info', 'theme-my-login' ); ?></label></th>-->
+			<td><textarea name="description" id="description" rows="5" cols="30" placeholder="<?php _e( 'Оставить свою заметку (видно только Вам)', 'theme-my-login' ); ?>"><?php echo esc_html( $profileuser->description ); ?></textarea><br />
+			<!--<span class="description"><?php _e( 'Share a little biographical information to fill out your profile. This may be shown publicly.', 'theme-my-login' ); ?></span>-->
+			</td>
 		</tr>
 
 		<?php
@@ -141,12 +161,14 @@ Theme My Login will always look in your theme's directory first, before using th
 		if ( $show_password_fields ) :
 		?>
 		</table>
-
-		<h3><?php _e( 'Account Management', 'theme-my-login' ); ?></h3>
-		<table class="tml-form-table">
+		
+		
+		<br /><br />
+		<!--<h3><?php _e( 'Account Management', 'theme-my-login' ); ?></h3>-->
+		<table class="tml-form-table profile-table">
 		<tr id="password" class="user-pass1-wrap">
-			<th><label for="pass1"><?php _e( 'New Password', 'theme-my-login' ); ?></label></th>
-			<td>
+			<td class="first"><label for="pass1"><?php _e( 'New Password', 'theme-my-login' ); ?></label></td>
+			<td class="last">
 				<input class="hidden" value=" " /><!-- #24364 workaround -->
 				<button type="button" class="button button-secondary wp-generate-pw hide-if-no-js"><?php _e( 'Generate Password', 'theme-my-login' ); ?></button>
 				<div class="wp-pwd hide-if-js">
@@ -165,15 +187,15 @@ Theme My Login will always look in your theme's directory first, before using th
 			</td>
 		</tr>
 		<tr class="user-pass2-wrap hide-if-js">
-			<th scope="row"><label for="pass2"><?php _e( 'Repeat New Password', 'theme-my-login' ); ?></label></th>
-			<td>
+			<td class="first" scope="row"><label for="pass2"><?php _e( 'Repeat New Password', 'theme-my-login' ); ?></label></td>
+			<td class="last">
 			<input name="pass2" type="password" id="pass2" class="regular-text" value="" autocomplete="off" />
 			<p class="description"><?php _e( 'Type your new password again.', 'theme-my-login' ); ?></p>
 			</td>
 		</tr>
 		<tr class="pw-weak">
-			<th><?php _e( 'Confirm Password', 'theme-my-login' ); ?></th>
-			<td>
+			<td class="first"><label><?php _e( 'Confirm Password', 'theme-my-login' ); ?></label></td>
+			<td class="last weakpass">
 				<label>
 					<input type="checkbox" name="pw_weak" class="pw-checkbox" />
 					<?php _e( 'Confirm use of weak password', 'theme-my-login' ); ?>
@@ -190,7 +212,10 @@ Theme My Login will always look in your theme's directory first, before using th
 			<input type="hidden" name="action" value="profile" />
 			<input type="hidden" name="instance" value="<?php $template->the_instance(); ?>" />
 			<input type="hidden" name="user_id" id="user_id" value="<?php echo esc_attr( $current_user->ID ); ?>" />
-			<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Update Profile', 'theme-my-login' ); ?>" name="submit" id="submit" />
+			<input type="submit" class="button-primary btn btn-primary" value="<?php esc_attr_e( 'Изменить данные и отправить на модерацию', 'theme-my-login' ); ?>" name="submit" id="submit" />
 		</p>
+		
+	</div>
+</div>
 	</form>
 </div>

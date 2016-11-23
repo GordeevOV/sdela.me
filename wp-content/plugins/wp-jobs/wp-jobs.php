@@ -69,8 +69,10 @@ function my_user_contactmethods($user_contactmethods)
     $user_contactmethods['birthdate'] = '<b>Дата рождения</b>';  
 	$user_contactmethods['education'] = '<b>Образование</b>';
 	$user_contactmethods['spec'] = '<b>Специальность</b>';
-	$user_contactmethods['experience'] = '<b>Опыт работы</b>';
-	$user_contactmethods['job_category'] = '<b>Виды деятельности</b>';
+	$user_contactmethods['experience'] = '<b>Опыт работы по специальности</b>';
+	$user_contactmethods['job_category'] = '<b>Виды деятельности и опыт</b>';
+	$user_contactmethods['hobby'] = '<b>Хобби</b>';
+	$user_contactmethods['usefulness'] = '<b>Чем я могу быть полезен</b>';
 	$user_contactmethods['facebook'] = '<b>Facebook</b>';
 	$user_contactmethods['vkontakte'] = '<b>ВКонтакте</b>';
 	$user_contactmethods['twitter'] = '<b>Twitter</b>';

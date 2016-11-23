@@ -199,6 +199,147 @@
 	display: inline-block;
 }
 
+.avatar-image {
+	text-align: center !important;
+}
+
+.avatar-buttons {
+	text-align: center !important;
+}
+
+.avatar-buttons label {
+	text-align: center !important;
+	font-family: museo_sans_cyrl500, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+    margin-top: 20px;
+    font-weight: 500;
+}
+
+.avatar-buttons input {
+	width: 100%;
+	border: none;
+}
+
+.avatar-buttons input.btn-danger {
+	border: none;
+	width: auto;
+	border: solid 1px #d76a43;
+	background-color: #fff;
+	color: #000000;
+	font-family: museo_sans_cyrl500, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	margin-top: 16px;
+}
+
+.avatar-buttons input.btn-danger:hover {
+	background-color: #d76a43;
+	color: #ffffff;
+	border: solid 1px #d76a43;
+}
+
+.avatar-buttons input.btn-danger:focus {
+	border: none;
+}
+
+.avatar-buttons .btn-primary {
+	background-color: #ffffff;
+	cursor: pointer;
+	color: #000000;
+	border: solid 1px #d76a43;
+	font-family: museo_sans_cyrl500, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+}
+
+.avatar-buttons .btn-primary:hover {
+	background-color: #d76a43;
+	color: #ffffff;
+	border: solid 1px #d76a43;
+}
+
+.avatar-buttons .btn-primary:active {
+	background-color: #d76a43 !important;
+	color: #ffffff;
+	border: solid 1px #d76a43 !important;
+}
+
+td.no-border {
+	border: none;
+}
+
+.profile-table td {
+	display: table-cell !important;
+	border: none !important;
+}
+
+.profile-table td input {
+	text-align: left;
+	padding: 0px 10px;
+}
+
+.profile-table td select {
+	text-align: left;
+	padding: 0px 7px;
+}
+
+.profile-table td label {
+	font-family: museo_sans_cyrl500, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	font-weight: 500;
+}
+
+.profile-table td label b {
+	font-family: museo_sans_cyrl500, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	font-weight: 500;
+}
+
+.profile-table td.first {
+	width: 33% !important;
+}
+
+.profile-table td.last {
+	width: 66% !important;
+}
+
+.profile-table td.last input, select {
+	width: 100% !important;
+}
+
+.profile-table td.weakpass label input{
+	width: auto !important;
+	margin-top: -2px;
+}
+
+.tml-submit-wrap .btn-primary {
+	background-color: #ffffff;
+	cursor: pointer;
+	color: #000000;
+	border: solid 1px #d76a43;
+	font-family: museo_sans_cyrl500, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+}
+
+.tml-submit-wrap .btn-primary:hover {
+	background-color: #d76a43;
+	color: #ffffff;
+	border: solid 1px #d76a43;
+}
+
+.tml-submit-wrap .btn-primary:active {
+	background-color: #d76a43 !important;
+	color: #ffffff;
+	border: solid 1px #d76a43 !important;
+}
+
+#description {
+	width: 100%;
+}
+
+.tml-submit-wrap {
+	margin-top: 65px !important;
+	margin-bottom: 65px !important;
+}
+
 @media screen and (min-width: 768px) {
 	.tml .tml-submit-wrap input {
 		width: auto;
