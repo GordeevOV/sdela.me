@@ -77,7 +77,7 @@ function my_user_contactmethods($user_contactmethods)
 	$user_contactmethods['vkontakte'] = '<b>ВКонтакте</b>';
 	$user_contactmethods['twitter'] = '<b>Twitter</b>';
 	$user_contactmethods['linkedin'] = '<b>LinkedIn</b>';
-	$user_contactmethods['instagram'] = '<b>Istagram</b>';
+	$user_contactmethods['instagram'] = '<b>Instagram</b>';
 	$user_contactmethods['skype'] = '<b>Skype</b>';
 	$user_contactmethods['viber'] = '<b>Viber</b>';
 	$user_contactmethods['whatsapp'] = '<b>WhatsApp</b>';
