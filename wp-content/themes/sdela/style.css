@@ -119,6 +119,14 @@ body {
 	border-bottom: solid 1px #669933;
 }
 
+.navbar-toggle {
+	border: 1px solid #000;
+}
+
+.navbar-toggle .icon-bar {
+	background-color: #000;
+}
+
 .dmbs-content {
 
 }
