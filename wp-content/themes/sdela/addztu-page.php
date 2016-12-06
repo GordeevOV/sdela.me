@@ -92,6 +92,47 @@
 					</div>
 				</div>
 			</div>
+			
+			<div class="row add-images">
+				<div class="col-md-6 col-xs-12">
+				</div>
+				<div class="col-md-6 col-xs-12">
+				</div>
+			</div>
+			
+			<div class="row add-place">
+				<div class="col-md-6 col-xs-12">
+					<div class="form-group">
+					    <label for="inputPlace" class="col-sm-6 control-label">Где надо сделать</label>
+					    <div class="col-sm-6">
+					      <input type="text" class="form-control" id="inputPlace" name="inputPlace">
+					    </div>
+				  	</div>
+				</div>
+				<div class="col-md-6 col-xs-12">
+				</div>
+			</div>
+			
+			<div class="row add-details">
+				<div class="col-md-12">
+					<div class="form-group">
+					    <label for="inputPlace" class="col-sm-3 control-label">Когда надо сделать</label>
+					    <div class="col-sm-9">
+					      <input type="text" class="form-control" id="inputPlace" name="inputPlace">
+					    </div>
+				  	</div>
+				</div>
+				<div class="col-md-12">
+					<div class="form-group">
+					    <label for="inputPlace" class="col-sm-3 control-label">Детали задания</label>
+					    <div class="col-sm-9">
+					      <textarea type="text" class="form-control" id="inputPlace" name="inputPlace">
+					      </textarea>
+					    </div>
+				  	</div>
+				</div>
+			</div>
+			
 		</form>
     </div>
 
