@@ -111,6 +111,9 @@
 				</div>
 				<div class="col-md-6 col-xs-12">
 				</div>
+				<div class="col-md-12 ztu-map">
+					<?php echo GeoMashupUserUIManager::get_instance()->print_form('enable_scroll_wheel_zoom=true'); ?>
+				</div>
 			</div>
 			
 			<div class="row add-details">

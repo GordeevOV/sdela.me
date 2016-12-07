@@ -205,4 +205,10 @@ function devdmbootstrap3_main_content_width() {
 
 if ( ! isset( $content_width ) ) $content_width = 800;
 
+add_filter( 'geo_mashup_load_location_editor', 'filter_geo_mashup_load_location_editor' );
+
+function filter_geo_mashup_load_location_editor( $load_flag ) {
+	return true;
+}
+
 ?>
