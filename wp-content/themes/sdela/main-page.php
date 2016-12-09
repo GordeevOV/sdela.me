@@ -35,7 +35,7 @@
         <?php // theloop
         if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-            <h2 class="page-header"><?php the_title() ;?></h2>
+            <!--<h2 class="page-header"><?php the_title() ;?></h2>-->
             
             <div class="row">
             <?php $args = array('numberposts' => 6, 'post_type' => 'ovg_mainpage');

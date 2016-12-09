@@ -21,17 +21,43 @@
     <div class="col-md-<?php devdmbootstrap3_main_content_width(); ?> dmbs-main">
 		<form class="add-form form-horizontal">
 			<div class="row">
-				<div class="col-md-6 col-xs-12">
+				<div class="col-md-10 col-sm-8 col-xs-8"></div>
+				<div class="col-md-2 col-sm-4 col-xs-4 zakaz">
+					<select name="inputType" id="inputType" class="form-control form-type">
+					
+					<?php 
+					$types = get_terms('ovg_ztu_type', array('orderby' => 'name', 'fields' => 'names', 'hide_empty' => 0));
+						//print_r($types);
+					foreach($types as $type):
+					?>
+						
+					<option value="<?php echo $type?>" <?php if($ztu_type == $type) echo 'selected'; ?>><?php echo $type?></option>
+							
+							
+					<?php endforeach;?>
+					</select>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 col-sm-8 col-xs-12">
 					<div class="form-group">
 					    <label for="inputTitle" class="col-sm-6 control-label">Что надо сделать</label>
 					    <div class="col-sm-6">
 					      <input type="text" class="form-control" id="inputTitle">
 					    </div>
 				  	</div>
+				</div>
+				<div class="col-md-6 col-sm-4 col-xs-12">
+					
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 col-sm-8 col-xs-12">
 				  	<div class="form-group">
 					    <label for="inputTitle" class="col-sm-6 control-label">Категория</label>
 					    <div class="col-sm-6">
 					      <select class="form-control" id="inputCat" name="inputCat">
+					      <option value="0">Добавить категорию</option>
 					      <?php 
 						$categories = get_terms('ovg_ztu_categories', array('orderby' => 'name', 'fields' => 'id=>name', 'hide_empty' => 0, 'parent' => 0));
 						//print_r($cities);
@@ -45,10 +71,18 @@
 							</select>
 					    </div>
 				  	</div>
+				</div>
+				<div class="col-md-4 col-sm-4 col-xs-12">
+					<input type="text" class="form-control" id="inputNewCategory" placeholder="Новая категория">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 col-sm-8 col-xs-12">
 				  	<div class="form-group">
 					    <label for="inputTitle" class="col-sm-6 control-label">Подкатегория</label>
-					    <div class="col-sm-6">
+					    <div class="col-md-6 col-sm-6 col-xs-12">
 					      <select class="form-control" id="inputSubCat" name="inputSubCat">
+					      <option value="0">Добавить подкатегорию</option>
 					      <?php
 					
 								if ($ztu_category) {
@@ -66,6 +100,13 @@
 							</select>
 					    </div>
 				  	</div>
+				</div>
+				<div class="col-md-4 col-sm-4 col-xs-12">
+					<input type="text" class="form-control" id="inputNewSubCategory" placeholder="Новая подкатегория">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 col-sm-8 col-xs-12">
 				  	<div class="form-group">
 					    <label for="inputTitle" class="col-sm-6 control-label">Стоимость работы</label>
 					    <div class="col-sm-6">
@@ -73,24 +114,7 @@
 					    </div>
 				  	</div>
 				</div>
-				<div class="col-md-6 col-xs-12">
-					<div class="col-md-8 col-xs-12"></div>
-					<div class="col-md-4 col-xs-12">
-						<select name="inputType" id="inputType" class="form-control form-type">
-						
-						<?php 
-							$types = get_terms('ovg_ztu_type', array('orderby' => 'name', 'fields' => 'names', 'hide_empty' => 0));
-							//print_r($types);
-							foreach($types as $type):
-						?>
-						
-							<option value="<?php echo $type?>" <?php if($ztu_type == $type) echo 'selected'; ?>><?php echo $type?></option>
-							
-							
-						<?php endforeach;?>
-						</select>
-					</div>
-				</div>
+				
 			</div>
 			
 			<div class="row add-images">
@@ -101,7 +125,7 @@
 			</div>
 			
 			<div class="row add-place">
-				<div class="col-md-6 col-xs-12">
+				<div class="col-md-6 col-sm-8 col-xs-12">
 					<div class="form-group">
 					    <label for="inputPlace" class="col-sm-6 control-label">Где надо сделать</label>
 					    <div class="col-sm-6">
@@ -109,10 +133,12 @@
 					    </div>
 				  	</div>
 				</div>
-				<div class="col-md-6 col-xs-12">
+				<div class="col-md-6 col-sm-8 col-xs-12">
 				</div>
 				<div class="col-md-12 ztu-map">
+					<div class="form-group">
 					<?php echo GeoMashupUserUIManager::get_instance()->print_form('enable_scroll_wheel_zoom=true'); ?>
+					</div>
 				</div>
 			</div>
 			
@@ -129,7 +155,7 @@
 					<div class="form-group">
 					    <label for="inputPlace" class="col-sm-3 control-label">Детали задания</label>
 					    <div class="col-sm-9">
-					      <textarea type="text" class="form-control" id="inputPlace" name="inputPlace">
+					      <textarea type="text" class="form-control" rows="7" id="inputPlace" name="inputPlace">
 					      </textarea>
 					    </div>
 				  	</div>
@@ -150,6 +176,14 @@
 <script>
 	jQuery("#inputCat").change(function(){
 		parent_id = jQuery("#inputCat").val();
+		
+		if (parent_id == 0) {
+			jQuery("#inputNewCategory").show();
+		}
+		else {
+			jQuery("#inputNewCategory").hide();
+		}
+		
 		//alert(parent_id);
 		jQuery.ajax({
 		type: "POST",
@@ -162,14 +196,28 @@
 		success: function (data) {
 			//alert(data);
 			jQuery("#inputSubCat").empty();
-			jQuery.each(data, function(key, value) {
-				jQuery("#inputSubCat").append(jQuery("<option value='" + key + "'>" + value + "</option>"));
-			});
+			jQuery("#inputSubCat").append(jQuery("<option value='0'>Добавить подкатегорию</option>"));
+			if (parent_id !=0) {
+				jQuery.each(data, function(key, value) {
+					jQuery("#inputSubCat").append(jQuery("<option value='" + key + "'>" + value + "</option>"));
+				});
+			}
 		},
 		error : function(s , i , error){
 			console.log(error);
 		}
 	});
+	});
+	
+	jQuery("#inputSubCat").change(function(){
+		parent_id = jQuery("#inputSubCat").val();
+		
+		if (parent_id == 0) {
+			jQuery("#inputNewSubCategory").show();
+		}
+		else {
+			jQuery("#inputNewSubCategory").hide();
+		}
 	});
 </script>
 

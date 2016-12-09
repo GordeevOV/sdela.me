@@ -200,6 +200,10 @@ body {
 	
 }
 
+.dmbs-main {
+	padding-top: 35px;
+}
+
 .dmbs-main h2 {
 	text-align: center;
 	border: none;
@@ -428,7 +432,41 @@ body {
 	margin-top: 35px;
 }
 
+.zakaz {
+	min-width: 150px;
+    float: right;
+}
+
+#inputNewCategory, #inputNewSubCategory {
+	margin-bottom: 15px;
+}
+
 /*---------------Карта--------------------------*/
 .ztu-map h3 {
 	display: none;
+}
+
+#geo-mashup-inline-help-link-wrap a {
+	color: #000000;
+}
+
+#geo-mashup-inline-help-link-wrap a:focus {
+	color: #669933;
+}
+
+#geo-mashup-inline-help-link-wrap a:hover, a:active, a:focus {
+	color: #669933;
+	text-decoration: none;
+}
+
+#geo-mashup-inline-help-link-wrap:hover {
+	border: none;
+}
+
+
+/*-------------Media queries---------------*/
+@media (min-width: 768px) {
+	#inputType {
+		margin-bottom: -34px;
+	}
 }
