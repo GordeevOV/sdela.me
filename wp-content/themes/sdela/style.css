@@ -441,6 +441,24 @@ body {
 	margin-bottom: 15px;
 }
 
+.type-ztu {
+	float: left;
+    margin: 0px 5px;
+    font-family: museo_sans_cyrl500, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    padding: 5px;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+#type0 {
+	background-color: #3591e0;
+}
+
+#type1 {
+	background-color: #689a1e;
+}
+
 /*---------------Карта--------------------------*/
 .ztu-map h3 {
 	display: none;
@@ -466,7 +484,7 @@ body {
 
 /*-------------Media queries---------------*/
 @media (min-width: 768px) {
-	#inputType {
+	.zakaz {
 		margin-bottom: -34px;
 	}
 }

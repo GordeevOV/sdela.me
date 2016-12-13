@@ -21,21 +21,24 @@
     <div class="col-md-<?php devdmbootstrap3_main_content_width(); ?> dmbs-main">
 		<form class="add-form form-horizontal">
 			<div class="row">
-				<div class="col-md-10 col-sm-8 col-xs-8"></div>
-				<div class="col-md-2 col-sm-4 col-xs-4 zakaz">
-					<select name="inputType" id="inputType" class="form-control form-type">
+				<div class="col-md-8 col-sm-7 col-xs-6"></div>
+				<div class="col-md-4 col-sm-5 col-xs-6 zakaz">
+					
 					
 					<?php 
 					$types = get_terms('ovg_ztu_type', array('orderby' => 'name', 'fields' => 'names', 'hide_empty' => 0));
 						//print_r($types);
+					$i = 0;
 					foreach($types as $type):
 					?>
-						
-					<option value="<?php echo $type?>" <?php if($ztu_type == $type) echo 'selected'; ?>><?php echo $type?></option>
+					<div class="type-ztu" id="type<?php echo $i;?>">	
+					<input type="radio" name="type_ztu" value="<?php echo $type?>" <?php if($ztu_type == $type) echo 'checked'; ?>><?php echo $type?>
+					</div>
 							
-							
-					<?php endforeach;?>
-					</select>
+					<?php 
+					$i++;
+					endforeach;?>
+					
 				</div>
 			</div>
 			<div class="row">
@@ -137,7 +140,7 @@
 				</div>
 				<div class="col-md-12 ztu-map">
 					<div class="form-group">
-					<?php echo GeoMashupUserUIManager::get_instance()->print_form('enable_scroll_wheel_zoom=true'); ?>
+					<?php echo GeoMashupPostUIManager::get_instance()->print_form('enable_scroll_wheel_zoom=true'); ?>
 					</div>
 				</div>
 			</div>
