@@ -122,8 +122,18 @@
 			
 			<div class="row add-images">
 				<div class="col-md-6 col-xs-12">
+					<div style="float: left;">
+						<img data-src="<?php echo $default?>" src="<?php echo $src?>" width="<?php echo $w?>px" />
+						<div>
+							<input type="hidden" name="ztumetabox_number[0]" class="ztumetabox_number" value="0" />
+							<input type="hidden" name="ztumetabox_photo[0]" id="ztumetabox_photo[0]" value="" />
+							<button type="submit" class="upload_image_button button">Загрузить</button>
+							<button type="submit" class="remove_image_button button">&times;</button>
+						</div>
+					</div>
 				</div>
 				<div class="col-md-6 col-xs-12">
+					<button type="submit" class="add_image_button button">Добавить изображения</button>
 				</div>
 			</div>
 			

@@ -42,6 +42,12 @@ add_editor_style('css/editor-style.css');
         wp_enqueue_script('theme-js', get_template_directory_uri() . '/js/bootstrap.js',array( 'jquery' ),$version,true );
         wp_enqueue_script('files-js', get_template_directory_uri() . '/js/fileinput.min.js',array( 'jquery' ),$version,true );
         wp_enqueue_script('ru-js', get_template_directory_uri() . '/js/ru.js',array( 'files-js' ),$version,true );
+        
+        wp_enqueue_script( 'myuploadscript', get_template_directory_uri() . '/js/upload.js', array('jquery'), null, false );
+	 	// подключаем все необходимые скрипты: jQuery, jquery-ui, datepicker
+		wp_enqueue_script('jquery-ui-datepicker');
+		// подключаем нужные css стили
+		wp_enqueue_style('jqueryui', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css', false, null );
     }
     add_action('wp_enqueue_scripts', 'devdmbootstrap3_theme_js');
 
