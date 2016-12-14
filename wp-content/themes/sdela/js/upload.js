@@ -34,7 +34,10 @@ jQuery(function($){
 		nextnum = parseInt(lastnum) + 1;
 		//alert (nextnum);
 		
-		$(this).parent().parent().before('<div style="float: left;"><img data-src="" src="" width="115px" /><div><input type="hidden" name="ztumetabox_number[0]" class="ztumetabox_number" value="' + nextnum + '" /><input type="hidden" name="ztumetabox_photo[' + nextnum + ']" id="ztumetabox_photo[' + nextnum + ']" value="" /><button type="submit" class="upload_image_button button">Загрузить</button><button type="submit" class="remove_image_button button">&times;</button></div></div>');
+		defimg = $('#default_img').val();
+		
+		$(".image-wrapper > .col-md-3").last().after('<div class="col-md-3 col-sm-4 col-xs-6"><img data-src="' + defimg + '" src="' + defimg + '" width="126px" /><div><input type="hidden" name="ztumetabox_number[' + nextnum + ']" class="ztumetabox_number" value="' + nextnum + '" /><input type="hidden" name="ztumetabox_photo[' + nextnum + ']" id="ztumetabox_photo[' + nextnum + ']" value="" /><button type="submit" class="upload_image_button button btn btn-default image-buttons">Загрузить</button><button type="submit" class="remove_image_button button btn btn-default image-buttons">&times;</button></div></div>');
+		
 
 		return false;
 	});

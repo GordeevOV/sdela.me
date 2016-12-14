@@ -428,7 +428,7 @@ body {
     font-size: 20px;
 }
 
-.add-images, .add-place, .add-details {
+.add-images, .add-place, .add-details, .add-video {
 	margin-top: 35px;
 }
 
@@ -481,6 +481,33 @@ body {
 	border: none;
 }
 
+/*---------------Изображения--------------------------*/
+#inputImage {
+	background-color: #689a1e;
+	float: left;
+    margin: 0px 5px;
+    font-family: museo_sans_cyrl500, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    padding: 5px;
+    color: #ffffff;
+    margin-top: 15px;
+}
+
+.image-buttons {
+	margin: 0px 5px;
+	 font-family: museo_sans_cyrl500, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    padding: 5px;
+    color: #ffffff;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: #689a1e;
+}
+
+.image-buttons:hover,  .image-buttons:focus, .image-buttons:active{
+	background-color: #689a1e;
+	color: #ffffff;
+}
 
 /*-------------Media queries---------------*/
 @media (min-width: 768px) {

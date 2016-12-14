@@ -21,8 +21,8 @@
     <div class="col-md-<?php devdmbootstrap3_main_content_width(); ?> dmbs-main">
 		<form class="add-form form-horizontal">
 			<div class="row">
-				<div class="col-md-8 col-sm-7 col-xs-6"></div>
-				<div class="col-md-4 col-sm-5 col-xs-6 zakaz">
+				<div class="col-md-8 col-sm-8 col-xs-6"></div>
+				<div class="col-md-4 col-sm-4 col-xs-6 zakaz">
 					
 					
 					<?php 
@@ -121,19 +121,44 @@
 			</div>
 			
 			<div class="row add-images">
-				<div class="col-md-6 col-xs-12">
-					<div style="float: left;">
-						<img data-src="<?php echo $default?>" src="<?php echo $src?>" width="<?php echo $w?>px" />
-						<div>
-							<input type="hidden" name="ztumetabox_number[0]" class="ztumetabox_number" value="0" />
-							<input type="hidden" name="ztumetabox_photo[0]" id="ztumetabox_photo[0]" value="" />
-							<button type="submit" class="upload_image_button button">Загрузить</button>
-							<button type="submit" class="remove_image_button button">&times;</button>
+				<div class="col-md-3 col-sm-4 col-xs-12">
+					<label for="inputImage" class="col-sm-6 control-label">Изображения</label>
+					<button type="submit" class="add_image_button button btn btn-default" id="inputImage">Добавить изображения</button>							</div>
+				<div class="col-md-9 col-sm-8 col-xs-12">
+					<?php
+					$w=126;
+					$h=90;
+					$default = get_stylesheet_directory_uri() . '/img/no-image.png';
+					if( $photo ) {
+						$image_attributes = wp_get_attachment_image_src( $photo, array($w, $h) );
+						$src = $image_attributes[0];
+					} else {
+						$src = $default;
+					}
+					?>
+					<input type="hidden" id="default_img" value="<?php echo $default?>" />
+					<div class="row image-wrapper">
+						<div class="col-md-3 col-sm-4 col-xs-6">
+							<img data-src="<?php echo $default?>" src="<?php echo $src?>" width="<?php echo $w?>px" />
+							<div>
+								<input type="hidden" name="ztumetabox_number[0]" class="ztumetabox_number" value="0" />
+								<input type="hidden" name="ztumetabox_photo[0]" id="ztumetabox_photo[0]" value="" />
+								<button type="submit" class="upload_image_button button btn btn-default image-buttons">Загрузить</button>
+								<button type="submit" class="remove_image_button button btn btn-default image-buttons">&times;</button>
+							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-6 col-xs-12">
-					<button type="submit" class="add_image_button button">Добавить изображения</button>
+			</div>
+			
+			<div class="row add-video">
+				<div class="col-md-12">
+					<div class="form-group">
+					    <label for="inputVideo" class="col-sm-3 control-label">Ссылка на видео</label>
+					    <div class="col-sm-9">
+					      <input type="text" class="form-control" id="inputVideo" name="inputVideo">
+					    </div>
+				  	</div>
 				</div>
 			</div>
 			
@@ -168,7 +193,7 @@
 					<div class="form-group">
 					    <label for="inputPlace" class="col-sm-3 control-label">Детали задания</label>
 					    <div class="col-sm-9">
-					      <textarea type="text" class="form-control" rows="7" id="inputPlace" name="inputPlace">
+					      <textarea class="form-control" rows="7" id="inputPlace" name="inputPlace">
 					      </textarea>
 					    </div>
 				  	</div>
