@@ -19,7 +19,7 @@
 
 
     <div class="col-md-<?php devdmbootstrap3_main_content_width(); ?> dmbs-main">
-		<form class="add-form form-horizontal">
+		<form  method="post" action="<?php bloginfo('template_url'); ?>/add_post_handler.php" class="add-form form-horizontal">
 			<div class="row">
 				<div class="col-md-8 col-sm-8 col-xs-6"></div>
 				<div class="col-md-4 col-sm-4 col-xs-6 zakaz">
@@ -32,7 +32,7 @@
 					foreach($types as $type):
 					?>
 					<div class="type-ztu" id="type<?php echo $i;?>">	
-					<input type="radio" name="type_ztu" value="<?php echo $type?>" <?php if($ztu_type == $type) echo 'checked'; ?>><?php echo $type?>
+					<input type="radio" name="inputType" value="<?php echo $type?>" <?php if($ztu_type == $type) echo 'checked'; ?>><?php echo $type?>
 					</div>
 							
 					<?php 
@@ -46,7 +46,7 @@
 					<div class="form-group">
 					    <label for="inputTitle" class="col-sm-6 control-label">Что надо сделать</label>
 					    <div class="col-sm-6">
-					      <input type="text" class="form-control" id="inputTitle">
+					      <input type="text" class="form-control" id="inputTitle" name="inputTitle">
 					    </div>
 				  	</div>
 				</div>
@@ -76,7 +76,7 @@
 				  	</div>
 				</div>
 				<div class="col-md-4 col-sm-4 col-xs-12">
-					<input type="text" class="form-control" id="inputNewCategory" placeholder="Новая категория">
+					<input type="text" class="form-control" id="inputNewCategory" name="inputNewCategory" placeholder="Новая категория">
 				</div>
 			</div>
 			<div class="row">
@@ -105,15 +105,32 @@
 				  	</div>
 				</div>
 				<div class="col-md-4 col-sm-4 col-xs-12">
-					<input type="text" class="form-control" id="inputNewSubCategory" placeholder="Новая подкатегория">
+					<input type="text" class="form-control" id="inputNewSubCategory" name="inputNewSubCategory" placeholder="Новая подкатегория">
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-6 col-sm-8 col-xs-12">
 				  	<div class="form-group">
-					    <label for="inputTitle" class="col-sm-6 control-label">Стоимость работы</label>
+					    <label for="inputPrice" class="col-sm-6 control-label">Стоимость работы</label>
 					    <div class="col-sm-6">
-					      <input type="text" class="form-control" id="inputTitle" name="inputTitle">
+					    	<div class="col-sm-6 inputPrice">
+					      		<input type="text" class="form-control" id="inputPrice" name="inputPrice">
+					      	</div>
+					      	<div class="col-sm-6 inputPriceType">
+					      		<select class="form-control" id="inputPriceType" name="inputPriceType">
+							<?php 
+								$pricetypes = get_terms('ovg_ztu_price_type', array('orderby' => 'name', 'fields' => 'id=>name', 'hide_empty' => 0, 'parent' => 0));
+								//print_r($cities);
+								foreach($pricetypes as $pricetype_id=>$pricetype_name):
+							?>
+							
+								<option value="<?php echo $pricetype_id?>" <?php if($ztu_pricetype == $pricetype_id) echo 'selected'; ?>><?php echo $pricetype_name?></option>
+								
+								
+							<?php endforeach;?>
+							
+							</select>
+							</div>
 					    </div>
 				  	</div>
 				</div>
@@ -183,20 +200,26 @@
 			<div class="row add-details">
 				<div class="col-md-12">
 					<div class="form-group">
-					    <label for="inputPlace" class="col-sm-3 control-label">Когда надо сделать</label>
+					    <label for="inputTime" class="col-sm-3 control-label">Когда надо сделать</label>
 					    <div class="col-sm-9">
-					      <input type="text" class="form-control" id="inputPlace" name="inputPlace">
+					      <input type="text" class="form-control" id="inputTime" name="inputTime">
 					    </div>
 				  	</div>
 				</div>
 				<div class="col-md-12">
 					<div class="form-group">
-					    <label for="inputPlace" class="col-sm-3 control-label">Детали задания</label>
+					    <label for="inputDescr" class="col-sm-3 control-label">Детали задания</label>
 					    <div class="col-sm-9">
-					      <textarea class="form-control" rows="7" id="inputPlace" name="inputPlace">
+					      <textarea class="form-control" rows="7" id="inputDescr" name="inputDescr">
 					      </textarea>
 					    </div>
 				  	</div>
+				</div>
+			</div>
+			
+			<div class="row add-submit">
+				<div class="col-sm-2 col-xs-12">
+					<button type="submit" class="ztu-submit btn btn-success" id="send" name="send">Отправить</button>
 				</div>
 			</div>
 			

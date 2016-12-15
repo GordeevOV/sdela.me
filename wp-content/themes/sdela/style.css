@@ -459,6 +459,18 @@ body {
 	background-color: #689a1e;
 }
 
+.ztu-submit {
+	background-color: #689a1e;
+}
+
+.inputPrice {
+	padding-left: 0px;
+}
+
+.inputPriceType {
+	padding-right: 0px;
+}
+
 /*---------------Карта--------------------------*/
 .ztu-map h3 {
 	display: none;
