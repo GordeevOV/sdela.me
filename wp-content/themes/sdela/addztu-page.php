@@ -240,6 +240,7 @@
 		
 		if (parent_id == 0) {
 			jQuery("#inputNewCategory").show();
+			jQuery("#inputNewSubCategory").show();
 		}
 		else {
 			jQuery("#inputNewCategory").hide();
@@ -279,6 +280,15 @@
 		else {
 			jQuery("#inputNewSubCategory").hide();
 		}
+	});
+	
+	jQuery('#send').click(function(){
+		//Проверка заполненности
+		if (jQuery("#inputNewCategory").css('display') != 'none') {
+			slert('!!!');
+		}
+		
+		return false;
 	});
 </script>
 

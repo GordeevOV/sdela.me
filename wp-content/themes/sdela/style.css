@@ -507,7 +507,7 @@ body {
 
 .image-buttons {
 	margin: 0px 5px;
-	 font-family: museo_sans_cyrl500, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: museo_sans_cyrl500, "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 16px;
     padding: 5px;
     color: #ffffff;
@@ -519,6 +519,107 @@ body {
 .image-buttons:hover,  .image-buttons:focus, .image-buttons:active{
 	background-color: #689a1e;
 	color: #ffffff;
+}
+
+/*-------------Список-------------------*/
+.type1 {
+	border: solid 2px #60970e;
+}
+
+.type2 {
+	border: solid 2px #f85c07;	
+}
+
+.list-ztu {
+	margin-bottom: 30px;
+}
+
+.list-ztu h2 {
+	text-align: left;
+	float: left;
+	margin-top: 25px;
+}
+
+.list-ztu h2 a {
+	font-family: museo_sans_cyrl500, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 22px;
+    color: #000000;
+}
+
+.list-ztu h2 a:hover {
+	border: none;
+	color: #60970e;
+}
+
+.list-price {
+	float: right;
+	margin-top: 25px;
+	font-family: museo_sans_cyrl500, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 22px;
+    color: #000000;
+}
+
+.ztutype1 {
+	background-color: #60970e;
+	font-family: museo_sans_cyrl500, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 17px;
+	color: #ffffff;
+	text-align: center;
+	padding: 0px 10px;
+	float: left;
+}
+
+.ztutype2 {
+	background-color: #f85c07;
+	font-family: museo_sans_cyrl500, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 17px;
+	color: #ffffff;
+	text-align: center;
+    padding: 0px 10px;
+	float: left;
+}
+
+.ztu-cat {
+	float: left;
+	padding: 0px 10px;
+	font-family: museo_sans_cyrl500, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 17px;
+}
+
+.list-count {
+	font-family: museo_sans_cyrl500, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.user-details {
+	padding-top: 30px;
+}
+
+span.fromyou {
+	color: #999999;
+	text-decoration: underline;
+	font-family: museo_sans_cyrl500, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+}
+
+span.distance {
+	font-family: museo_sans_cyrl500, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 25px;
+    color: #2475d1;
+}
+
+span.time {
+	font-family: museo_sans_cyrl500, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+}
+
+.distance-wrap {
+	padding-top: 30px;
+}
+
+.time-wrap {
+	padding-top: 10px;
 }
 
 /*-------------Media queries---------------*/
