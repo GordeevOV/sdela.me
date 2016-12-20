@@ -42,3 +42,25 @@
 	<!-- end content container -->
 </div>
 <?php get_footer(); ?>
+
+<script>
+	jQuery(".action").click(function(){
+		popupid = jQuery(this).data('action');
+		//alert(popupid);
+		jQuery('#list-popup-'+popupid).show();
+	});
+	
+	function ActionPopupHide() {
+		jQuery(".list-popup").hide();
+	}
+	
+	jQuery(document).mouseup(function (e){ // событие клика по веб-документу
+		//alert("!!!");
+		var div = jQuery(".list-popup"); // тут указываем ID элемента
+		//alert("!!!");
+		if (!div.is(e.target) // если клик был не по нашему блоку
+	    	&& div.has(e.target).length === 0) { // и не по его дочерним элементам
+			ActionPopupHide(); // скрываем его
+		}
+	});
+</script>

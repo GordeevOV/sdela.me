@@ -556,4 +556,6 @@ function ovg_load_subcategories() {
 		exit;
 	}
 }
+
+require_once("includes/actions.php");
 ?>

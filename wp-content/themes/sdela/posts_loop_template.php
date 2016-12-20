@@ -101,6 +101,35 @@
 						<span class="time">&nbsp;&nbsp;<?php echo $ztu_begin;?></span>
 					</div>	
 				</div>
+				<div class="row action-button">
+					<div class="col-md-12">
+						<div class="list-popup" id="list-popup-<?php echo $post->ID;?>">
+							<?php
+							$tmp_post = $post;
+							$args = array(
+							'numberposts' => -1,
+							'post_type' => 'ovg_action',
+							'orderby'     => 'title ',
+							'order'       => 'DESC',
+							);
+							$actions = get_posts( $args );
+							
+							foreach ($actions as $action) {
+								$icon = get_post_meta($action->ID, "actions_icons", true);
+								echo "<div class='row'>
+									<div class = 'col-md-12 list-popup-row'>
+									<i class='fa fa-".$icon."'></i>&nbsp;".$action->post_title."
+									</div>
+									</div>
+								";
+							}
+							
+							$post = $tmp_post;
+							?>
+						</div>
+						<span class="action" data-action="<?php echo $post->ID;?>">+</span>
+					</div>
+				</div>
 			</div>
 		</div>
 		
