@@ -116,12 +116,23 @@
 							
 							foreach ($actions as $action) {
 								$icon = get_post_meta($action->ID, "actions_icons", true);
-								echo "<div class='row'>
+								if ($action->ID == 151) {
+									echo "<div class='row'>
+									<div class = 'col-md-12 list-popup-row'>
+									<i class='fa fa-".$icon."'></i>&nbsp;".wpfp_link()."
+									</div>
+									</div>
+								";
+								}
+								else {
+									echo "<div class='row'>
 									<div class = 'col-md-12 list-popup-row'>
 									<i class='fa fa-".$icon."'></i>&nbsp;".$action->post_title."
 									</div>
 									</div>
 								";
+								}
+								
 							}
 							
 							$post = $tmp_post;
