@@ -116,7 +116,7 @@
 							
 							foreach ($actions as $action) {
 								$icon = get_post_meta($action->ID, "actions_icons", true);
-								if ($action->ID == 151) {
+								if ($action->ID == 76) {
 									echo "<div class='row'>
 									<div class = 'col-md-12 list-popup-row'>
 									<i class='fa fa-".$icon."'></i>&nbsp;".wpfp_link()."

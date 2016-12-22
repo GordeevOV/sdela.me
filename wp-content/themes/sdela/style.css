@@ -661,6 +661,31 @@ span.action {
 .list-popup-row:hover {
 	color: #999999;
 }
+
+/*-------------Детальный вид объявления--------------*/
+
+.single-title {
+	font-family: museo_sans_cyrl300, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+}
+
+.single-descr {
+	font-family: museo_sans_cyrl500, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 22px;
+}
+
+.row-margin {
+	margin-top: 35px;
+}
+
+.single-video img {
+	width: 100%;
+}
+
+p.distance {
+	color: #2475d1;
+}
+
 /*-------------Media queries---------------*/
 @media (min-width: 768px) {
 	.zakaz {
