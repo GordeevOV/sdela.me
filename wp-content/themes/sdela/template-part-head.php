@@ -68,7 +68,7 @@
 				$size = $options['default_size'];
 				$src_av = avatar_manager_generate_avatar_url( $attachment_id, $size );
 			?>
-				<img src="<?php echo $src_av;?>" alt="" />
+				<img src="<?php echo $src_av;?>" alt="" style="width: 40px; margin-top: 25px;" />
 			<?php
 				}
 				else {
@@ -79,7 +79,7 @@
 			<?php if ( is_user_logged_in() ) {
 				$userid = get_current_user_id();
 			?>
-				<a href="/your-profile/"><?php echo $cur_user->last_name."<br />".$cur_user->first_name;?></a>
+				<a href="/your-profile/"><?php echo $cur_user->last_name."<br />".$cur_user->first_name;?></a><br />
 				<a href="/logout/">Выйти</a>
 			<?php }
 				else {?>

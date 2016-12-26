@@ -284,11 +284,25 @@
 	
 	jQuery('#send').click(function(){
 		//Проверка заполненности
+		var err = 0;
 		if (jQuery("#inputNewCategory").css('display') != 'none') {
-			slert('!!!');
+			if (jQuery("#inputNewCategory").val() == '') {
+				alert('Заполните новую категорию!!!');
+				err = 1;
+			}			
 		}
 		
-		return false;
+		if (jQuery("#inputNewSubCategory").css('display') != 'none') {
+			if (jQuery("#inputNewSubCategory").val() == '') {
+				alert('Заполните новую покатегорию!!!');
+				err = 1;
+			}
+		}
+		
+		if (err == 1) {
+			return false;
+		}
+		
 	});
 </script>
 
