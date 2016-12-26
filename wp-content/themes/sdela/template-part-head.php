@@ -58,11 +58,28 @@
         </div>
 
 		<div class="col-md-2 dmbs-header-text registration">
-			<img src="<?php echo get_template_directory_uri();?>/img/logo2.jpg" alt="" />
-			<div>
 			<?php if ( is_user_logged_in() ) {
+				$userid = get_current_user_id();
+				$cur_user = get_userdata($userid);
+				$attachment_id = get_user_meta( $userid, 'avatar_manager_custom_avatar', true );
+				$custom_avatar = get_post_meta( $attachment_id, '_avatar_manager_custom_avatar', true );
+				
+				$options = avatar_manager_get_options();
+				$size = $options['default_size'];
+				$src_av = avatar_manager_generate_avatar_url( $attachment_id, $size );
 			?>
-				<a href="/your-profile/">Профиль</a>
+				<img src="<?php echo $src_av;?>" alt="" />
+			<?php
+				}
+				else {
+			?>
+			<img src="<?php echo get_template_directory_uri();?>/img/logo2.jpg" alt="" />
+			<?php } ?>
+			<div style="text-align: right;">
+			<?php if ( is_user_logged_in() ) {
+				$userid = get_current_user_id();
+			?>
+				<a href="/your-profile/"><?php echo $cur_user->last_name."<br />".$cur_user->first_name;?></a>
 				<a href="/logout/">Выйти</a>
 			<?php }
 				else {?>
