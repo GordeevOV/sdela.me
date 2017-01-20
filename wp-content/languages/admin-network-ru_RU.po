@@ -1,5 +1,5 @@
-# Translation of WordPress - Development - Administration - Network Admin in Russian
-# This file is distributed under the same license as the WordPress - Development - Administration - Network Admin package.
+# Translation of WordPress - 4.7.x - Administration - Network Admin in Russian
+# This file is distributed under the same license as the WordPress - 4.7.x - Administration - Network Admin package.
 msgid ""
 msgstr ""
 "PO-Revision-Date: 2016-11-08 20:20:09+0000\n"
@@ -9,7 +9,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: GlotPress/2.3.0-alpha\n"
 "Language: ru\n"
-"Project-Id-Version: WordPress - Development - Administration - Network Admin\n"
+"Project-Id-Version: WordPress - 4.7.x - Administration - Network Admin\n"
 
 #: wp-admin/network/index.php:51 wp-admin/network/site-info.php:31
 #: wp-admin/network/site-new.php:30 wp-admin/network/site-settings.php:30

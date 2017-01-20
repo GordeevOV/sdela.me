@@ -1,0 +1,4 @@
+[29-Dec-2016 13:45:38 Europe/Moscow] PHP Warning:  require(ABSPATHWPINC/option.php): failed to open stream: No such file or directory in /home/c15162/public_html/sdela.com/wp-includes/functions.php on line 8
+[29-Dec-2016 13:45:38 Europe/Moscow] PHP Warning:  require(ABSPATHWPINC/option.php): failed to open stream: No such file or directory in /home/c15162/public_html/sdela.com/wp-includes/functions.php on line 8
+[29-Dec-2016 13:45:38 Europe/Moscow] PHP Fatal error:  require(): Failed opening required 'ABSPATHWPINC/option.php' (include_path='.:/opt/alt/php54/usr/share/pear:/opt/alt/php54/usr/share/php') in /home/c15162/public_html/sdela.com/wp-includes/functions.php on line 8
+[29-Dec-2016 14:05:47 Europe/Moscow] PHP Fatal error:  Call to undefined function _deprecated_file() in /home/c15162/public_html/sdela.com/wp-includes/session.php on line 8

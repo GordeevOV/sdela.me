@@ -1,0 +1,1 @@
+[10-Jan-2017 14:35:13 Europe/Moscow] PHP Fatal error:  Call to undefined function add_action() in /home/c15162/public_html/sdela.com/wp-content/plugins/hello.php on line 60

@@ -1,0 +1,9 @@
+[15-Dec-2016 17:10:38 UTC] PHP Fatal error:  Cannot use object of type WP_Error as array in /home/c15162/public_html/sdela.com/wp-content/themes/sdela/add_post_handler.php on line 38
+[15-Dec-2016 17:19:08 UTC] PHP Fatal error:  Cannot use object of type WP_Error as array in /home/c15162/public_html/sdela.com/wp-content/themes/sdela/add_post_handler.php on line 38
+[26-Dec-2016 13:10:10 UTC] PHP Fatal error:  Cannot use object of type WP_Error as array in /home/c15162/public_html/sdela.com/wp-content/themes/sdela/add_post_handler.php on line 65
+[26-Dec-2016 14:15:10 UTC] PHP Fatal error:  Cannot use object of type WP_Error as array in /home/c15162/public_html/sdela.com/wp-content/themes/sdela/add_post_handler.php on line 38
+[26-Dec-2016 14:15:39 UTC] PHP Fatal error:  Cannot use object of type WP_Error as array in /home/c15162/public_html/sdela.com/wp-content/themes/sdela/add_post_handler.php on line 38
+[26-Dec-2016 14:24:30 UTC] PHP Fatal error:  Cannot use object of type WP_Error as array in /home/c15162/public_html/sdela.com/wp-content/themes/sdela/add_post_handler.php on line 38
+[26-Dec-2016 14:25:43 UTC] PHP Fatal error:  Cannot use object of type WP_Error as array in /home/c15162/public_html/sdela.com/wp-content/themes/sdela/add_post_handler.php on line 38
+[26-Dec-2016 14:27:36 UTC] PHP Fatal error:  Cannot use object of type WP_Error as array in /home/c15162/public_html/sdela.com/wp-content/themes/sdela/add_post_handler.php on line 38
+[26-Dec-2016 14:34:18 UTC] PHP Fatal error:  Cannot use object of type WP_Error as array in /home/c15162/public_html/sdela.com/wp-content/themes/sdela/add_post_handler.php on line 38

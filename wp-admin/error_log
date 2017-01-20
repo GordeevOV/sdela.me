@@ -1,0 +1,4 @@
+[21-Oct-2016 13:05:37 UTC] База данных WordPress возвратила ошибку Unknown column 'sdl_' in 'field list' в ответ на запрос SELECT sdl_
+[26-Oct-2016 10:49:47 UTC] PHP Warning:  sprintf(): Too few arguments in /home/c15162/public_html/sdela.com/wp-content/plugins/wp2yt-uploader/inc/upload_content.php on line 528
+[29-Dec-2016 17:00:32 Europe/Moscow] PHP Fatal error:  Call to undefined function __() in /home/c15162/public_html/sdela.com/wp-admin/menu.php on line 23
+[31-Dec-2016 09:33:16 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/c15162/public_html/sdela.com/wp-content/plugins/codecanyon-6463373-web-20-directory-plugin-for-wordpress/functions.php on line 1190
