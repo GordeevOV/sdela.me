@@ -37,7 +37,7 @@ msgstr "Изображение карты"
 
 #: ../edit-form.php:169
 msgid "Find a new location:"
-msgstr "Найти по адресу:"
+msgstr "Найти новое место:"
 
 #: ../edit-form.php:173
 msgid "or select from"

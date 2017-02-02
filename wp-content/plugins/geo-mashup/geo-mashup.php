@@ -3,7 +3,7 @@
 Plugin Name: Geo Mashup
 Plugin URI: https://wordpress.org/plugins/geo-mashup/
 Description: Save location for posts and pages, or even users and comments. Display these locations on Google, Leaflet, and OSM maps. Make WordPress into your GeoCMS.
-Version: 1.9.1
+Version: 1.10.0
 Author: Dylan Kuhn
 Text Domain: GeoMashup
 Domain Path: /lang
@@ -51,6 +51,7 @@ class GeoMashup {
 	 * Whether to add the click-to-load map script.
 	 *
 	 * @since 1.4
+	 * @var bool
 	 */
 	private static $add_loader_script = false;
 
@@ -58,8 +59,17 @@ class GeoMashup {
 	 * The basename of the Geo Mashup Search plugin when deactivated.
 	 * 
 	 * @since 1.5
+	 * @var string
 	 */
 	private static $deactivate_geo_search_basename = '';
+
+	/**
+	 * Freemius integration.
+	 *
+	 * @since 1.10
+	 * @var Freemius
+	 */
+	private static $freemius;
 
 	/**
 	 * Load Geo Mashup.
@@ -120,16 +130,31 @@ class GeoMashup {
 
 		if ( ! defined( 'GEO_MASHUP_UNIT_TESTING' ) ) {
 			include_once( GEO_MASHUP_DIR_PATH . '/freemius.php' );
-			GeoMashupFreemius::load();
+			self::$freemius = new GeoMashupFreemius();
+			self::$freemius->load();
 		}
 
 		if ( $geo_mashup_options->get( 'overall', 'enable_geo_search' ) == 'true' ) {
 			include_once( GEO_MASHUP_DIR_PATH . '/geo-mashup-search.php' );
 		}
 
+	}
+
+	/**
+	 * Load available integrations.
+	 *
+	 * @since 1.10.0
+	 */
+	public static function load_integrations() {
+
 		if ( defined( 'ICL_LANGUAGE_CODE' ) ) {
 			include_once( GEO_MASHUP_DIR_PATH . '/wpml.php' );
-			GeoMashupWPML::load();
+			add_action( 'wpml_loaded', array( 'GeoMashupWPML', 'load' ) );
+		}
+
+		if ( defined( 'SNAZZY_VERSION_NUMBER' ) ) {
+			include_once( GEO_MASHUP_DIR_PATH . '/snazzy-maps.php' );
+			GeoMashupSnazzyMaps::load();
 		}
 	}
 
@@ -145,6 +170,8 @@ class GeoMashup {
 		add_action( 'wp_scheduled_delete', array( __CLASS__, 'action_wp_scheduled_delete' ) );
 
 		add_action( 'plugins_loaded', array( __CLASS__, 'dependent_init' ), -1 );
+		add_action( 'plugins_loaded', array( __CLASS__, 'load_integrations' ) );
+
 		add_action( 'wp_ajax_geo_mashup_query', array( __CLASS__, 'geo_query') );
 		add_action( 'wp_ajax_nopriv_geo_mashup_query', array( __CLASS__, 'geo_query') );
 		add_action( 'wp_ajax_geo_mashup_kml_attachments', array( __CLASS__, 'ajax_kml_attachments') );
@@ -165,6 +192,9 @@ class GeoMashup {
 			// To add plugin listing links
 			add_filter( 'plugin_action_links', array( __CLASS__, 'plugin_action_links' ), 10, 2 );
 			add_filter( 'plugin_row_meta', array( __CLASS__, 'plugin_row_meta' ), 10, 2 );
+
+			// Enqueue widget assets in admin
+			add_action( 'admin_enqueue_scripts', array( __CLASS__, 'widget_scripts'));
 
 		} else {
 
@@ -214,7 +244,7 @@ class GeoMashup {
 		define('GEO_MASHUP_DIRECTORY', dirname( GEO_MASHUP_PLUGIN_NAME ) );
 		define('GEO_MASHUP_URL_PATH', trim( plugin_dir_url( __FILE__ ), '/' ) );
 		define('GEO_MASHUP_MAX_ZOOM', 20);
-		define('GEO_MASHUP_VERSION', '1.9.1');
+		define('GEO_MASHUP_VERSION', '1.10.0');
 		define('GEO_MASHUP_DB_VERSION', '1.3');
 	}
 
@@ -234,6 +264,9 @@ class GeoMashup {
 				wp_enqueue_script( 'geo-mashup-tests' );
 				include_once( GEO_MASHUP_DIR_PATH . '/tests.php' );
 			}
+		}
+		if (is_admin()){
+			self::register_script( 'geo-mashup-widget','js/widget.js', array( 'jquery' ), GEO_MASHUP_VERSION, true );
 		}
 	}
 
@@ -1107,7 +1140,7 @@ class GeoMashup {
 		}
 		if ( !is_array( $context_objects ) ) {
 			$atts['error_comment'] = '<!-- ' . __( 'Geo Mashup found no objects to map in this context', 'GeoMashup' ) . '-->';
-			return;
+			return $atts;
 		}
 		foreach ( $context_objects as $context_object ) {
 			$object_ids[] = self::object_id_by_name( $object_name, $context_object );
@@ -2219,6 +2252,12 @@ class GeoMashup {
 
 		return '<div id="' . $id . '" class="' . implode( ' ', $classes ) . '"></div>';
 	}
+	/**
+	 * Enqueue widget assets in admin.
+	 */	
+	public static function widget_scripts() {
+		wp_enqueue_script( 'geo-mashup-widget' );
+	}		
 } // class GeoMashup
 GeoMashup::load();
 } // class exists
